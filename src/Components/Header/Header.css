@@ -1,0 +1,60 @@
+
+
+header {
+  position: fixed;
+  width: 100%;
+}
+
+.HeaderAnnouncement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #04253f;
+  color: #fff;
+  height: 45px;
+}
+
+.HeaderAnnouncement p {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dotted #a7896f;
+  width: 70%;
+  margin: auto;
+  height: 100%;
+}
+
+.NavContainer {
+  height: 150px;
+  background-color: #fff;
+  color: #a98a70;
+  border-bottom: 1px solid #a7896f;
+}
+
+.NavLinks {
+  display: flex;
+  flex-direction: row;
+}
+
+.NavLinks li {
+  margin: 15px;
+}
+
+.Logo {
+
+  margin-right: 50px;
+
+}
+
+.UserIcons {
+
+  margin-left: 50px;
+
+}

@@ -1,0 +1,35 @@
+
+
+main {
+  padding-top: 200px;
+  min-height: 100vh;
+
+}
+
+.FrontCoffeeImg {
+
+  margin-bottom: 30px;
+
+}
+
+.CoffeeTypesDouble {
+  display: flex;
+  justify-content: space-around;
+}
+
+.CoffeeTypesSingle {
+  text-align: center;
+}
+
+.BottomCoffeeImg {
+
+  width: 80%;
+
+
+}
+
+.FrontCoffeeImg {
+
+  max-width: 100%;
+
+}

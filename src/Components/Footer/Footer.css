@@ -1,0 +1,56 @@
+
+footer {
+  background-color: #c2bdb6;
+  height: 400px;
+}
+
+.footerContent {
+  display: block;
+  width: 80%;
+  height: 100%;
+  padding: 40px 0;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  font-size: 300;
+  box-sizing: border-box;
+}
+
+.Services, .Company {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  width: 48%;
+  position: relative;
+  height: 100%;
+}
+
+.Services {
+  margin-right: 4%;
+}
+
+.FooterTitles {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+}
+
+.FooterLists {
+  display: inline-block;
+  width: 50%;
+  margin-top: 10px;
+}
+
+.FooterLists > li {
+  margin: 5px;
+}
+
+.Copyright, .ContactInfo {
+
+  position: absolute;
+  bottom: 0;
+
+}
+
