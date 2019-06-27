@@ -48,9 +48,22 @@ footer {
 }
 
 .Copyright, .ContactInfo {
-
   position: absolute;
   bottom: 0;
-
 }
 
+.ContactInfo p {
+  margin-top: 15px;
+}
+
+.Copyright {
+  right: 0;
+}
+
+.SocialMediaContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 80px;
+  justify-content: space-between;
+  max-width: 300px;
+}

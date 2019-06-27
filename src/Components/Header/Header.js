@@ -7,12 +7,12 @@ const header = () => {
   return (
     <header>
       <div className='HeaderAnnouncement'>
-        <p>Free Shipping on Order over $30!</p>
+        <p>Free Domestic Shipping on Orders over $29</p>
       </div>
       <div className='NavContainer'>
         <nav>
           <div className='Logo'>
-            <p>LOGO</p>
+            <p>Rishi</p>
           </div>
           <div className='NavLinksContainer'>
             <ul className='NavLinks'>

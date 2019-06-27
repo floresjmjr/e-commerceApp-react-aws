@@ -1,6 +1,13 @@
 import React from 'react'
 import './Footer.css';
 
+import SocialMedia from './SocialMedia/SocialMedia';
+
+import FacebookImg from './Images/facebook.png';
+import InstagramImg from './Images/instagram.png';
+import TwitterImg from './Images/twitter.png';
+import YoutubeImg from './Images/youtube.png';
+
 const footer = () => {
 
   return (
@@ -18,6 +25,20 @@ const footer = () => {
             <li>Track Order</li>
             <li>Exchanges & Returns</li>
           </ul>
+          <div className='SocialMediaContainer'>
+            <SocialMedia 
+              destination={'https://www.facebook.com/pages/Rishi-Tea/39035256828'} 
+              image={FacebookImg}/>
+            <SocialMedia 
+              destination={'https://www.instagram.com/rishitea/'} 
+              image={InstagramImg}/>
+            <SocialMedia 
+              destination={'https://twitter.com/RishiTea'} 
+              image={TwitterImg}/> 
+            <SocialMedia 
+              destination={'https://www.youtube.com/c/RishiTea-Botanicals'} 
+              image={YoutubeImg}/>                       
+          </div>
           <div className='ContactInfo'>
             <p>Customer Service</p>
             <p>1-(800) 123-4567 | M-F 9AM to 7pm EST</p>
@@ -37,13 +58,6 @@ const footer = () => {
             <li>Privacy Policy</li>
             <li>Terms & Conditions</li>
           </ul>
-          <div className='SocialMediaContainer'>
-            <ul>
-              <li>
-                <a href='www.google.com'><img src='' alt=''></img></a>
-              </li>
-              </ul>
-          </div>
           <div className='Copyright'>
             <p>&#9400; 2019 Jorge Flores</p>
           </div>
