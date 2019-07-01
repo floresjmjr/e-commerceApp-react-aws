@@ -1,0 +1,16 @@
+.SampleTitle {
+  font-size: 21px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-family: "Sentinel A", "Sentinal B";
+  color: #00263e;
+  font-weight: 500;
+}
+
+.SampleParagraph {
+  font-family: "Sentinel A", "Sentinal B";
+  color: #00263e;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: italic;
+}

@@ -1,0 +1,20 @@
+
+
+.HoverNavContainer {
+  display: none;
+  height: auto;
+  background-color: rgba(242, 242, 242, 1);
+  position: fixed;
+  padding: 10px;
+}
+
+
+.NavSubList {
+  border-left: 1px solid #000;
+}
+
+.NavSubListItem {
+  text-transform: uppercase;
+  border-bottom: 1px solid #a98a70;
+  padding-bottom: 5px;
+}

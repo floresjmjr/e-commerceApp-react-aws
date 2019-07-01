@@ -1,0 +1,59 @@
+.SlideShow {
+  margin-bottom: 30px;
+}
+
+.Slide {
+  position: relative;
+}
+
+.FrontCoffeeImg {
+  max-width: 100%;
+}
+
+.RightArrow, .LeftArrow {
+  position: absolute;
+  top: 45%;
+  z-index: 50;
+}
+
+.LeftArrow {
+  left: 40px;
+}
+
+.RightArrow {
+  right: 40px;
+}
+
+
+.SlideLink {
+  border: 1px solid #5c7182;
+  font-weight: 400;
+  color: #00263e;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 13px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 35px;
+  margin-top: 15px;
+}
+
+.SlideTitle {
+  font-family: "Sentinel A", "Sentinal B";
+  letter-spacing: 0;
+  font-size: 33px;
+  font-weight: 400;
+  color: #00263e;
+  margin-top: 30px;
+}
+
+.SlideParagraph {
+  font-family: "Sentinel A", "Sentinal B";
+  font-weight: 400;
+  font-size: 17px;
+  color: #00263e;
+  font-style: italic;
+  width: 80%;
+  margin: auto;
+}

@@ -1,0 +1,21 @@
+.ProductText {
+  margin-top: 30px;
+}
+
+.ProductPrice {
+  margin-top: 10px;
+  color: #00263e;
+}
+
+.ProductItem {
+  margin-top: 40px;
+  margin-right: 25px;
+}
+
+.ProductTitle {
+  color: #b09a51;
+}
+
+.ProductSubTitle {
+  color: #00263e;
+}

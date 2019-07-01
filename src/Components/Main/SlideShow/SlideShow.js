@@ -1,43 +1,58 @@
 import React, {Component} from 'react'
-import Slide from './Slide/Slide';
-import oceanCoffee from './Images/quincy-alivio-UvgzVZimyWU-unsplash.svg'
-import otherCoffee from './Images/karl-chor-UvWlksgZGPE-unsplash.jpg'
 
+import LeftArrow from './LeftArrow/LeftArrow';
+import RightArrow from './RightArrow/RightArrow';
+
+import './SlideShow.css';
 
 
 class SlideShow extends Component {
 
   state = {
-    images: [oceanCoffee, otherCoffee],
-    currentImageIndex: 0,
+    items: this.props.slides,
+    slideIndex: 0,
   }
 
   prevSlideHandler = () =>{
-    let newIndex = this.state.currentImageIndex - 1;
+    let newIndex = this.state.slideIndex - 1;
     if(newIndex < 0) {
-      newIndex = this.state.images.length - 1;
+      newIndex = this.state.items.length - 1;
     }
-    this.setState({currentImageIndex: newIndex})
+    this.setState({slideIndex: newIndex})
   }
 
   nextSlideHandler = () => {
-    let newIndex = this.state.currentImageIndex + 1;
-    if(newIndex > this.state.images.length - 1) {
+    let newIndex = this.state.slideIndex + 1;
+    if(newIndex > this.state.items.length - 1) {
       newIndex = 0;
     }
-    this.setState({currentImageIndex: newIndex})
+    this.setState({slideIndex: newIndex})
   }
 
   render() {
+
+    let extra = '';
+    if(this.props.extended) {
+      extra = (
+        <div>
+          <h3 className='SlideTitle'>{this.state.items[this.state.slideIndex].title}</h3>
+          <p className='SlideParagraph'>{this.state.items[this.state.slideIndex].paragraph}</p>
+          <a href={this.state.items[this.state.slideIndex].link} className='SlideLink'>View Journal</a>
+        </div>
+      )
+    }
+
+
     return (
-      <div className='Slider'>
-        <Slide cssClass={'FrontCoffeeImg'} image={this.state.images[this.state.currentImageIndex]}/>
-        <div className="leftArrow" onClick={this.prevSlideHandler}>
-          <i className="fas fa-chevron-left fa-2x" aria-hidden="true"></i>
-        </div>
-        <div className="rightArrow" onClick={this.nextSlideHandler}>
-          <i className="fas fa-chevron-right fa-2x" aria-hidden="true"></i>
-        </div>
+      <div className='SlideShow'>
+        <div className='Slide'>
+          <img 
+            className='FrontCoffeeImg' 
+            src={this.state.items[this.state.slideIndex].image} alt=''/>
+          <LeftArrow clicked={this.prevSlideHandler.bind(this)} />
+          <RightArrow clicked={this.nextSlideHandler.bind(this)} />
+        </div> 
+        {extra}
       </div>
     )
   }

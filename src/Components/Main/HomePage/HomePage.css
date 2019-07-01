@@ -1,4 +1,9 @@
-
+.FrontPicture {
+  position: relative;
+  height: 100%;
+  width: auto;
+  display: block;
+}
 
 .CoffeeTypesDouble {
   display: flex;
@@ -10,20 +15,18 @@
 }
 
 .BottomCoffeeImg {
-
+  margin-top: 30px;
   width: 80%;
-
-
 }
 
-.FrontCoffeeImg {
-  margin-bottom: 30px;
-  max-width: 100%;
-}
 
 
 .FrontSamplesTitle {
   padding: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .FrontSamplesList {
@@ -65,6 +68,7 @@ aside {
   color: #fff;
   font-size: 16px;
   text-transform: uppercase;
+  margin-top: 10px;
 }
 
 .emailSubscription input {
@@ -93,5 +97,4 @@ aside {
 .emailSubscription input::-ms-input-placeholder {
   color: #fff;
   text-align: center;
-
 }
