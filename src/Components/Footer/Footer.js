@@ -13,7 +13,27 @@ const footer = () => {
   return (
   
     <footer>
-      <div className='footerContent'>
+      <aside>
+        <form className='EmailSubscription'>
+          <input type='email' name='email' placeholder='Subscribe for deals and promotions!'/>
+          <button type='submit' name='submitButton'>Submit</button>
+        </form>
+      </aside>
+      <div className='SocialMediaContainer'>
+        <SocialMedia 
+          destination={'https://www.facebook.com/pages/Rishi-Tea/39035256828'} 
+          image={FacebookImg}/>
+        <SocialMedia 
+          destination={'https://www.instagram.com/rishitea/'} 
+          image={InstagramImg}/>
+        <SocialMedia 
+          destination={'https://twitter.com/RishiTea'} 
+          image={TwitterImg}/> 
+        <SocialMedia 
+          destination={'https://www.youtube.com/c/RishiTea-Botanicals'} 
+          image={YoutubeImg}/>                       
+      </div>
+      <div className='ServiceAndCompanyContainer'>
         <section className='Services'>
           <h5 className='FooterTitles'>Service</h5>
           <ul className='FooterLists'>
@@ -25,20 +45,6 @@ const footer = () => {
             <li>Track Order</li>
             <li>Exchanges & Returns</li>
           </ul>
-          <div className='SocialMediaContainer'>
-            <SocialMedia 
-              destination={'https://www.facebook.com/pages/Rishi-Tea/39035256828'} 
-              image={FacebookImg}/>
-            <SocialMedia 
-              destination={'https://www.instagram.com/rishitea/'} 
-              image={InstagramImg}/>
-            <SocialMedia 
-              destination={'https://twitter.com/RishiTea'} 
-              image={TwitterImg}/> 
-            <SocialMedia 
-              destination={'https://www.youtube.com/c/RishiTea-Botanicals'} 
-              image={YoutubeImg}/>                       
-          </div>
           <div className='ContactInfo'>
             <p>Customer Service</p>
             <p>1-(800) 123-4567 | M-F 9AM to 7pm EST</p>
@@ -62,10 +68,9 @@ const footer = () => {
             <p>&#9400; 2019 Jorge Flores</p>
           </div>
         </section>
-        
       </div>
     </footer>
-  
+
   )
 
 }

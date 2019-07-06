@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import './HomePage.css'
 
-import SampleList from './SampleList/SampleList';
+import SampleList from '../SampleList/SampleList';
 import SlideShow from '../SlideShow/SlideShow';
-
+// eslint-disable-next-line
 import first from '../SlideShow/Images/quincy-alivio-UvgzVZimyWU-unsplash.svg';
+// eslint-disable-next-line
 import second from '../SlideShow/Images/karl-chor-UvWlksgZGPE-unsplash.jpg';
 
 class HomePage extends Component {
@@ -37,30 +38,16 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <SlideShow slides={[{image: first}, {image: second}]}/>
-        <div className='CoffeeTypesDouble'>
-          <img className='FrontCoffeeImg' src={'https://via.placeholder.com/450'} alt='a'/>
-          <img className='FrontCoffeeImg' src={'https://via.placeholder.com/450'} alt='a'/>
-        </div>
-        <section className='CoffeeTypesSingle'>
-          <img className='BottomCoffeeImg' src={'https://via.placeholder.com/450x250'} alt='a'/>
-        </section>
-        <section>
-          <h4 className='FrontSamplesTitle'>Featured Products</h4>
-          <SampleList />
-        </section>
         <section>
           <h4 className='FrontSamplesTitle'>Latest Blog Entries</h4>
           <SlideShow 
             slides={this.state.blogEntries}
             extended={true}/>
         </section>
-        <aside>
-          <form className='emailSubscription'>
-            <input type='email' name='email' placeholder='Enter your email address to subscribe for updates'/>
-            <button type='submit' name='submitButton'>Submit</button>
-          </form>
-        </aside>
+        <section>
+          <h4 className='FrontSamplesTitle'>Featured Products</h4>
+          <SampleList />
+        </section>
       </div>
     )
   }

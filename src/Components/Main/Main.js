@@ -3,28 +3,21 @@ import { Route } from 'react-router-dom'
 import './Main.css'
 
 import HomePage from './HomePage/HomePage';
-import Products from './ProductsPage/ProductsPage';
+import ProductPage from './ProductPage/ProductPage';
+import SubcategoryPage from './ProductsPage/SubcategoryPage/SubcategoryPage';
+import CategoryPage from './ProductsPage/CategoryPage/CategoryPage';
 
-const main = () => {
 
+const main = (props) => {
   return (
   
     <main> 
       <Route path='/' exact component={HomePage}/>
-      <Route path='/Category-1' 
-        render={(props)=> <Products {...props} page='Category 1'/>}/>
-      <Route path='/Category-2' 
-        render={(props)=> <Products {...props} page='Category 2'/>}/>
-      <Route path='/Category-3' 
-        render={(props)=> <Products {...props} page='Category 3'/>}/>
-      <Route path='/Category-4' 
-        render={(props)=> <Products {...props} page='Category 4'/>}/>
-      <Route path='/Category-5' 
-        render={(props)=> <Products {...props} page='Category 5'/>}/>
-      <Route path='/Category-6' 
-        render={(props)=> <Products {...props} page='Category 6'/>}/>
-      <Route path='/Category-7' 
-        render={(props)=> <Products {...props} page='Category 7'/>}/>
+      <Route exact path='/Category/:category' 
+        render={(props)=> <CategoryPage {...props} />}/>
+      <Route exact path='/Category/:category/Subcategory/:subcategory/' 
+        render={(props)=> <SubcategoryPage {...props} sub={true}/>}/>
+      <Route path='/Product/:id' component={ProductPage}/>
     </main>
   
   )

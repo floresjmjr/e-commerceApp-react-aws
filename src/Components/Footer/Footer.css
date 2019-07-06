@@ -1,22 +1,21 @@
 
 footer {
   background-color: #c2bdb6;
-  height: 400px;
+  height: 550px;
 }
 
-.footerContent {
+.ServiceAndCompanyContainer {
   display: block;
   width: 80%;
-  height: 100%;
-  padding: 40px 0;
+  padding-top: 40px;
   margin: auto;
-  text-align: center;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-size: 12px;
-  font-size: 300;
+  font-weight: 400;
   box-sizing: border-box;
+  height: 250px;
 }
 
 .Services, .Company {
@@ -64,7 +63,75 @@ footer {
 .SocialMediaContainer {
   display: flex;
   flex-direction: row;
-  margin-top: 80px;
-  justify-content: space-between;
-  max-width: 300px;
+  justify-content: space-around;
+  padding: 40px 0;
+  background-color: #04253f;
+  color: #fff;
+}
+
+aside {
+  height: 135px;
+  background-color: rgba(242, 242, 242, 1);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.EmailSubscription {
+  height: 100%;
+  width: 50%;
+  max-width: 650px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.EmailSubscription button {
+  border: none;
+  background-color: rgba(242, 242, 242, 1);
+  color: #04253f;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.EmailSubscription input {
+  color: #04253f;
+  width: 100%;
+  outline:none;
+  background-color: rgba(242, 242, 242, 1);
+  border:none;
+  border-bottom: 1px solid #04253f;
+  padding-bottom: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.EmailSubscription input::placeholder {
+  color: #04253f;
+  opacity: 1;
+  text-align: center;
+}
+
+.EmailSubscription input:-ms-input-placeholder {
+  color: #04253f;
+  text-align: center;
+}
+
+.EmailSubscription input::-ms-input-placeholder {
+  color: #fff;
+  text-align: center;
+}
+
+.EmailSubscription input:focus::placeholder {
+  color: transparent;
+}
+
+.EmailSubscription input:focus::-ms-input-placeholder {
+  color: transparent;
+} 
+.EmailSubscription input:focus:-ms-input-placeholder {
+  color: transparent;
 }

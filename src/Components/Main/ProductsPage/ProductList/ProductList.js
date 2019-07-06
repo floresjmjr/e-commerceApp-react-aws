@@ -2,27 +2,35 @@ import React from 'react';
 
 import './ProductList.css';
 
+
+
 const productList = (props) => {
 
-  const list = (
-    <li className='ProductItem'>
-      <img src={"https://via.placeholder.com/175x200"} alt=''/>
-      <div className='ProductText'>
-        <h5 className='ProductTitle'>{props.title}</h5>
-        <h6 className='ProductSubTitle'>Subtitle of First</h6>
-        <p className='ProductPrice'>$10.00</p>
-      </div>
-    </li>
-  )
+  const priceGenerator = () =>{
+    const first = Math.floor(Math.random() * 10 + 5)
+    const second = Math.floor(Math.random() * 10)
+    const third = Math.floor(Math.random() * 10)
+    return `${first}.${second}${third}` 
+  }
+
+
+  const list = props.products.slice(0,20).map((productObj)=>{
+    return (
+      <li className='ProductItem' key={productObj.asin}>
+        <img src={productObj.imUrl} alt=''/>
+        <h5 className='ProductTitle'>{productObj.title}</h5>
+        <h6 className='ProductSubTitle'>{productObj.brand}</h6>
+        <p className='ProductPrice'>${productObj.price || priceGenerator()}</p>
+      </li>
+    )
+  }) 
+
+
 
   return (
-    <div>
-    <h2 className='ProductListHeader'>{props.title} - Product Page</h2>
     <ul className='ProductList'>
       {list}
     </ul>
-  </div>
-
   )
 }
 

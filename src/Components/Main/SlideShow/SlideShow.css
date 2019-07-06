@@ -4,6 +4,8 @@
 
 .Slide {
   position: relative;
+  max-width: 80%;
+  margin: auto;
 }
 
 .FrontCoffeeImg {

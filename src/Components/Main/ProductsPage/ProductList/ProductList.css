@@ -8,14 +8,39 @@
 }
 
 .ProductItem {
-  margin-top: 40px;
-  margin-right: 25px;
+  width: 30%;
+  border: 1px solid #00263e;
+  margin-right: 5%;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.ProductItem:nth-child(3n) {
+  margin-right: 0;
 }
 
 .ProductTitle {
-  color: #b09a51;
+  color: #00263e;
+  text-transform: lowercase;
+  text-transform: capitalize;
+  font-size: 18px;
+  width: 80%;
+  justify-self: bottom;
 }
 
 .ProductSubTitle {
   color: #00263e;
+}
+
+.ProductList {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
 }

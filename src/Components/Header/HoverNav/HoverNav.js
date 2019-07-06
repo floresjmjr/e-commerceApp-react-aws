@@ -7,35 +7,41 @@ const hoverNav = (props) => {
   let list = [];
 
   switch(props.data) {
-    case 'Category-1':
-      list = ["subcategory-1", "subcategory-2", "subcategory-3", "subcategory-4", "subcategory-5"]
+    case "Kitchen & Dining":
+      list = ["Dining & Entertaining","Serveware","Beverage Serveware","Carafes & Pitchers"]
       break;
-    case 'Category-2':
-      list = ["subcategory-6", "subcategory-7", "subcategory-8", "subcategory-9", "subcategory-10", "subcategory-11", "subcategory-1", "subcategory-1"]
+    case "Artwork":
+      list = ["Posters & Prints"]
       break;
-    case 'Category-3':
-      list = ["subcategory-12", "subcategory-13", "subcategory-14", "subcategory-15"] 
+    case "Bedding":
+      list = ["Kids' Bedding","Pillows"] 
       break;
-    case 'Category-4':
-      list = ["subcategory-16", "subcategory-17"]
+    case "Storage & Organization":
+      list = ["Home Storage Hooks","Utility Hooks"]
       break;
-    case 'Category-5':
-      list = ["subcategory-18", "subcategory-19", "subcategory-20"]
+    case "Bath":
+      list = ["Bathroom Accessories","Holders & Dispensers","Soap Dishes"]
       break;
-    case 'Category-6':
-      list = ["subcategory-21", "subcategory-22", "subcategory-23", "subcategory-24", "subcategory-25", "subcategory-26"]
+    case "Heating, Cooling & Air Quality":
+      list = ["Household Fans","Table Fans"]
       break;
-    case 'Category-7':
-      list = ["subcategory-27", "subcategory-28", "subcategory-29", "subcategory-30", "subcategory-31", "subcategory-32", "subcategory-33"]
-    break;
-      default:
+    case "Irons & Steamers":
+      list = ["Irons","Automatic Turnoff Irons"]
+      break;
+    case "Vacuums & Floor Care":
+      list = ["Vacuums","Handheld Vacuums"]
+      break;
+    case "Furniture":
+      list = ["Kids' Furniture","Armoires & Dressers"]
+      break;
+    default:
       list = [];
   }
 
   list = list.map((string)=>{
     return (<li key={string}
         className='NavSubListItem'>
-        <Link to={`/${props.data}/${string}`}>{string}</Link>
+        <Link to={`/Category/${props.data}/Subcategory/${string}`}>{string}</Link>
       </li>)
   })
 

@@ -6,6 +6,14 @@ header {
   z-index: 100;
 }
 
+.TopHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75%;
+  margin: auto;
+  padding: 20px 0;
+}
 
 
 .NavLink:hover .HoverNavContainer {
@@ -21,16 +29,19 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 100%;
   margin: auto;
-  height: 100%;
+  border-top: 1px solid #a7896f;
+  width: 100%;
 }
 
-.NavContainer {
-  height: 150px;
+.HeaderContainer {
   background-color: #fff;
   color: #a98a70;
   border-bottom: 1px solid #a7896f;
+  width: 100%;
+  margin: auto;
+  height: 100%;
 }
 
 .NavLinks {
@@ -55,18 +66,55 @@ nav {
   color: #a7896f;
 }
 
-.UserIcons {
+.UserOptions {
   letter-spacing: 1.5px;
   font-weight: 300;
   text-transform: uppercase;
   font-size: 14px;
   margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
+.UserOptions > div {
+  margin-right: 20px;
 }
 
 .Search {
   letter-spacing: 1.5px;
-  font-weight: 300;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 14px;
+}
+
+.Search input {
+  border: none;
+  border-bottom: 1px solid #a7896f;
+  width: 200px;
+  height: 20px;
+  font-size: 16px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.ShoppingCart {
+  position: absolute;
+  top: 45px;
+  right: 35px;
+  font-size: 20px;
+}
+
+.UserAccount {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.ShoppingCartSummary {
+  display: none; 
+}
+
+.Logo span {
+  margin-left: 10px;
 }

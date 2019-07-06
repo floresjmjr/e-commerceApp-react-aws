@@ -1,0 +1,93 @@
+
+
+.ProductTitle {
+  text-transform: uppercase;
+  font-size: 24px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.ProductDetails, .ProductProfile {
+  width: 40%;
+  text-align: left;
+}
+
+.ProductDescriptionTitle, .ProductSpecTitle {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px;
+  border-bottom: 1px solid #04253f;
+  background-color: rgba(242, 242, 242, 1);
+  margin-bottom: 10px;
+  color: #b09a51;
+}
+
+.ProductDescription {
+  padding-left: 15px;
+  color: #04253f;
+}
+
+.ProductText {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.Rating {
+  color: #04253f;
+}
+
+.ProductDetails div {
+  margin-bottom: 30px;
+}
+
+.SubtractQuantity, .AddQuantity {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  font-size: 20px;
+  border: 1px solid #04253f;
+}
+
+.SubtractQuantity {
+  margin-right: 5px;
+}
+
+.AddQuantity {
+  margin-left: 5px;
+}
+
+.InputQuantity {
+  width: 40px;
+  height: 50px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.InputQuantity::-webkit-inner-spin-button, .InputQuantity::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.SubmitItem {
+  display: block;
+  height: 40px;
+  width: 180px;
+  border: 1px solid #00263e;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.SubmitItem span {
+  margin-right: 10px;
+}
+
+.ProductSpecList {
+  list-style-type: disc;
+  padding-left: 40px;
+  color: #04253f;
+}
