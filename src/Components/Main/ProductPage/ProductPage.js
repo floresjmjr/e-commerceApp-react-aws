@@ -1,59 +1,104 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
+
+import './ProductPage.css';
+
 import SlideShow from '../SlideShow/SlideShow';
-import './ProductPage.css'
-import ProductForm from './ProductForm/ProductForm';
+import ProductProfile from './ProductProfile/ProductProfile';
+import Spinner from '../Spinner/Spinner';
+import ProductDetails from './ProductDetails/ProductDetails.js';
 
 
-const productPage = (props) =>{
+class ProductPage extends Component {
+  state = {
+    doneLoading: false,
+    product: {
+      description: 'Omnesque oporteat complectitur mei in. Paulo quodsi ei vis, habeo quaeque pri at. Eum ad putent vulputate percipitur, ne facilisi legendos pri. Usu id sanctus omittam, vis vocent philosophia ei. Errem verear fastidii ex sed, mei ne vidisse honestatis. Eu viderer efficiendi vel. Wisi oportere constituam an pro, pro labore repudiandae an, vis at adhuc adipiscing.',
+      brand: 'Brand',
+      price: "10.00",
+    },
+    cart: [],
+    qty: 1,
+  }
 
+  componentDidMount() {
+    const formattedCat = encodeURI(this.props.location.state)
+    const id = this.props.match.params.id;
+    const url = `https://e-commerce-jf.firebaseio.com/${formattedCat}/${id}.json`
+    axios.get(url)
+    .then((response)=>{
+      console.log('product page data', response.data)
+      if(response.data.title.includes('&quot;')){
+        let titles = response.data.title.split('&quot;');
+        const title = this.capitalize(titles[1])
+        response.data.title = titles[1];
+        response.data.subtitle = titles[0];
+      }
+      const productProperties = {...this.state.product, ...response.data}
+      this.setState({
+        product: productProperties, 
+        doneLoading: true
+      })
+    })
+  }
 
+  addItemToCart = (event) =>{
+    event.preventDefault();
+    const item = {
+      asin: this.state.product.asin,
+      title: this.state.product.title,
+      price: this.state.product.price,
+    }
+    console.log('addItemtocart', item);
+  }
 
-  let list = "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna"
+  addQty = (event) =>{
+    event.preventDefault();
+    let newQty = this.state.qty + 1;
+    this.setState({qty: newQty})
+  }
 
-  list = list.split('.').map((string)=>{
-    return ( <li>{string}.</li> )
-  })
+  subtractQty = (event) =>{
+    event.preventDefault();
+    if(this.state.qty <= 1) {
+    } else {
+      let newQty = this.state.qty - 1;
+      this.setState({qty: newQty})
+    }
+  }
 
+  capitalize = (string) =>{
+    const sentence = string.toLowerCase()
+    return sentence[0].toUpperCase() + sentence.slice(1);
+  }
 
-  return (
-    <div className='ProductPage'>
-      <div className='ProductImages'>
-        <SlideShow sliderClass='ProductSlider' slides={[{image: 'https://via.placeholder.com/850x500'}, {image: 'https://via.placeholder.com/800x600'}]}/>
-      </div>
-      <section className='ProductText'>
-        <div className='ProductDetails'>
-          <div className='ProductDescriptionContainer'>
-            <h4 className='ProductDescriptionTitle'>Product Description</h4>
-            <p className='ProductDescription'>Nullam bibendum nec eros eu tincidunt. Aliquam ut vestibulum arcu. Ut consequat nec massa sed tempus. Pellentesque lobortis egestas justo vel fermentum. Sed id gravida mi, ornare consectetur tellus. Donec porttitor lorem quis mi ultrices sodales. Ut interdum in ligula in auctor. Mauris rutrum semper quam at fermentum. Donec bibendum neque sem, vel convallis turpis vestibulum vel. Ut tincidunt tortor id cursus pharetra. Phasellus sit amet turpis a purus lobortis semper. Nulla at lobortis diam.</p>
+  render(){
+
+    if(this.state.doneLoading){
+      return (
+        <div className='ProductPage'>
+          <div className='ProductPageImages'>
+            <SlideShow sliderClass='ProductPageSlider' slides={[{image: this.state.product.imUrl}, {image: 'https://via.placeholder.com/600x400'}]}/>
           </div>
-          <div className='ProductSpecContainer'>
-            <h4 className='ProductSpecTitle'>Product Specs</h4>
-            <ul className='ProductSpecList'>
-              {list}
-            </ul>
-          </div>
-        </div>
-        <div className='ProductProfile'>
-          <section className='ProductHeader'>
-            <h3 className='ProductTitle'>Product Title 1</h3>
-            <h5 className='Subtitle'>Item # 1</h5>
-            <p className='ProductPrice'>$10.00</p>
-            <a href='##' className='Rating'>
-              <i className='far fa-star'/>
-              <i className='far fa-star'/>
-              <i className='far fa-star'/>
-              <i className='far fa-star'/>
-              <i className='far fa-star'/>
-            </a>
+          <section className='ProductPageText'>
+            <ProductDetails description={this.state.product.description}/>
+            <ProductProfile 
+              title={this.state.product.title} 
+              brand={this.state.product.subtitle || this.state.product.brand} 
+              price={this.state.product.price}
+              qty={this.state.qty}
+              subtract={this.subtractQty}
+              add={this.addQty}
+              addItem={this.addItemToCart}/>
           </section>
-          <ProductForm />
         </div>
-      </section>
-    </div>
-  )
-
+      )
+    } else {
+      return <Spinner />
+    }
+  }
 }
 
 
 
-export default productPage;
+export default ProductPage;

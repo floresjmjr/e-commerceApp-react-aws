@@ -22,7 +22,13 @@ class SubcategoryPage extends Component {
       for(var asinNumber in categoryProducts) {
         let newObj = {}
         for(var productKey in categoryProducts[asinNumber]) {
-          newObj[productKey] = categoryProducts[asinNumber][productKey]
+          if(productKey === 'title' && categoryProducts[asinNumber][productKey].includes('&quot;')){
+            let titles = categoryProducts[asinNumber][productKey].split('&quot;');
+            newObj['title'] = titles[1]
+            newObj['subtitle'] = titles[0]
+          } else {
+            newObj[productKey] = categoryProducts[asinNumber][productKey]
+          }
         }
         productList.push(newObj)
       }
@@ -31,10 +37,12 @@ class SubcategoryPage extends Component {
     })
   }
 
-  filterSubcategoryItems = (categoryItems) =>{
+  filterSubcategoryItems = (categoryItems) => {
     return categoryItems.filter((itemObj)=>{
       if(itemObj.categories[0].includes(this.props.match.params.subcategory)) {
         return itemObj;
+      } else {
+        return false;
       }
     })
   }
@@ -49,11 +57,11 @@ class SubcategoryPage extends Component {
   }
 
   render() {
-    console.log('Subcategory', this.props)
+    // console.log('Subcategory', this.props)
     this.setCategory()
     let products = [];
     if(this.state.doneLoading) {
-      products = <ProductList products={this.state.productList}/>
+      products = <ProductList products={this.state.productList} category={this.props.match.params.category}/>
     } else {
       products = <Spinner />
     }

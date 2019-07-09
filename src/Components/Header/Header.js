@@ -17,10 +17,10 @@ const header = () => {
                 Search<input className='fas fa-search'/>
               </div>
               <div className='UserAccount'>
-                <p className='fas fa-user'>MyAccount </p>
+                <p className='fas fa-user'>Account </p>
               </div>
               <div className='ShoppingCart'>
-                <p className='fas fa-shopping-cart'>(0)</p>
+                <Link to='/ShoppingCart' className='fas fa-shopping-cart'>(0)</Link>
                 <div className='ShoppingCartSummary'>
                 </div>
               </div>

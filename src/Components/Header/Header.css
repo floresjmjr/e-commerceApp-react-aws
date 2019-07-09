@@ -105,6 +105,11 @@ nav {
   font-size: 20px;
 }
 
+.ShoppingCart a {
+  color: #a98a70;
+  text-decoration: none;
+}
+
 .UserAccount {
   position: absolute;
   top: 20px;

@@ -11,7 +11,7 @@ import second from '../SlideShow/Images/karl-chor-UvWlksgZGPE-unsplash.jpg';
 class HomePage extends Component {
   
   state = {
-    blogEntries: [
+    products: [
       { image: 'https://via.placeholder.com/900x400', 
         title: "Sourcing Vanilla - Rishi's Origin Story to San Luis Potosi",
         link: 'www.google.com',
@@ -39,9 +39,9 @@ class HomePage extends Component {
     return (
       <div>
         <section>
-          <h4 className='FrontSamplesTitle'>Latest Blog Entries</h4>
+          <h4 className='FrontSamplesTitle'>Latest Sales</h4>
           <SlideShow 
-            slides={this.state.blogEntries}
+            slides={this.state.products}
             extended={true}/>
         </section>
         <section>

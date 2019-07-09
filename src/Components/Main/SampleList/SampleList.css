@@ -14,3 +14,26 @@
   font-size: 16px;
   font-style: italic;
 }
+
+.FrontSamplesTitle {
+  padding: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.FrontSamplesList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-top: 1px solid #00263e;
+  padding: 50px 0;
+  box-sizing: border-box;
+  width: 80%;
+  margin: auto;
+}
+
+.FrontSamplesList li {
+  width: 250px;
+}

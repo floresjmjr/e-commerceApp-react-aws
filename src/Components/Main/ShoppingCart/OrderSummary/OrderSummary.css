@@ -1,0 +1,28 @@
+
+.OrderSummaryContainer {
+  margin-top: 20px;
+  width: 200px;
+  margin: 20px auto 0 auto;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.OrderSummarySubtotal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.OrderSummaryTitle {
+  border-bottom: 1px solid #04253f;
+}
+
+.ProceedToCheckoutBtn {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #04253f;
+  color: whitesmoke;
+}

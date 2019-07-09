@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
 import './ProductList.css';
 
 
@@ -15,13 +15,20 @@ const productList = (props) => {
 
 
   const list = props.products.slice(0,20).map((productObj)=>{
+    const destination = `/Product/${productObj.asin}`
+    const obj = {
+      pathname: destination,
+      state: props.category,
+    }
     return (
-      <li className='ProductItem' key={productObj.asin}>
-        <img src={productObj.imUrl} alt=''/>
-        <h5 className='ProductTitle'>{productObj.title}</h5>
-        <h6 className='ProductSubTitle'>{productObj.brand}</h6>
-        <p className='ProductPrice'>${productObj.price || priceGenerator()}</p>
-      </li>
+      <Link className='ProductItem' key={productObj.asin} to={obj}>
+        <li>
+          <img className='ProductImage' src={productObj.imUrl} alt=''/>
+          <h5 className='ProductTitle'>{productObj.title}</h5>
+          <h6 className='ProductSubTitle'>{productObj.subtitle || productObj.brand}</h6>
+          <p className='ProductPrice'>${productObj.price || priceGenerator()}</p>
+        </li>
+      </Link>
     )
   }) 
 

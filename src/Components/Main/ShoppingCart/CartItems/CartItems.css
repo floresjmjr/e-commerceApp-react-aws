@@ -1,0 +1,36 @@
+
+.CartItem {
+  border-bottom: 1px solid #04253f;
+}
+
+.CartItemDescription {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.CartImg {
+  width: 100px;
+  display: inline-block;
+}
+
+.ShoppingCartTitle {
+  padding: 20px 0;
+  font-weight: bold;
+  font-size: 26px;
+  color: #04253f;
+}
+
+.CartTable {
+  border-collapse: collapse;
+  width: 70%;
+  margin: auto;
+}
+
+.CartTable th {
+  border-top: 3px solid #04253f;
+  border-bottom: 3px solid #04253f;
+}
+
+.CartItemTitle{
+  vertical-align: top;
+}

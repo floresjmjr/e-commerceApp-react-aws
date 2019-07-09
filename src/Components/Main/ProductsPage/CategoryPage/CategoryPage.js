@@ -15,10 +15,11 @@ const categoryPage = (props) => {
       </section>
       <section className='NewArrivalsContainer'>
         <h4 className='SectionTitle'>New Arrivals</h4>
-        {props.products}
+        <SampleList />
       </section>
       <section className='FeaturedContainer'>
         <h4 className='SectionTitle'>Featured</h4>
+        <SampleList />
       </section>
     </div>
   )

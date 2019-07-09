@@ -37,7 +37,7 @@ class SlideShow extends Component {
         <div>
           <h3 className='SlideTitle'>{this.state.items[this.state.slideIndex].title}</h3>
           <p className='SlideParagraph'>{this.state.items[this.state.slideIndex].paragraph}</p>
-          <a href={this.state.items[this.state.slideIndex].link} className='SlideLink'>View Blog</a>
+          <a href={this.state.items[this.state.slideIndex].link} className='SlideLink'>View All Sales</a>
         </div>
       )
     }
