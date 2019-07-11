@@ -4,8 +4,7 @@
 }
 
 .CartItemDescription {
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding: 20px 0;
 }
 
 .CartImg {
@@ -29,8 +28,11 @@
 .CartTable th {
   border-top: 3px solid #04253f;
   border-bottom: 3px solid #04253f;
+  padding: 5px 0;
 }
 
 .CartItemTitle{
   vertical-align: top;
+  margin: auto;
+  width: 200px;
 }

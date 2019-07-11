@@ -6,27 +6,34 @@ const cartItems = (props) =>{
   
   let qtyOptions = []
   for(var i= 1; i <= 20; i +=1){
-    qtyOptions.push(<option value={i}>{i}</option>)
+    qtyOptions.push(<option key={i} value={i}>{i}</option>)
   }
 
-  const itemList = [1,2].map((item)=>{
+  console.log('qtyOptions', qtyOptions);
+
+  
+  const calculateTotal = (price, qty) => {
+    return (price * qty).toFixed(2);
+  }
+
+  const itemList = props.cart.map((item)=>{
     return (
-      <tr className='CartItem'>
+      <tr key={item.asin} className='CartItem'>
         <td className='CartItemDescription'>
-          <img className='CartImg'src="https://via.placeholder.com/650x550"/>
-          <h5 className='CartItemTitle'>Product Title</h5>
+          <img className='CartImg'src={item.image} alt='ds'/>
+          <h5 className='CartItemTitle'>{item.title}</h5>
         </td>
         <td className='CartPrice'>
-          <p>$60.00</p>
+          <p>{item.price}</p>
         </td>
         <td className='CartQty'>
-          <select>
+          <select value={item.qty} name={item.asin} onChange={props.quantityChange}>
             {qtyOptions}
             <option value='Delete'>Delete</option>
           </select>
         </td>
         <td className='CartTotalPrice'>
-          <p>$120.00</p>
+          <p>{calculateTotal(item.price, item.qty)}</p>
         </td>
       </tr>
     )

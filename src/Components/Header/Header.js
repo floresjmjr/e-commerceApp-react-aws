@@ -19,11 +19,11 @@ const header = () => {
               <div className='UserAccount'>
                 <p className='fas fa-user'>Account </p>
               </div>
-              <div className='ShoppingCart'>
-                <Link to='/ShoppingCart' className='fas fa-shopping-cart'>(0)</Link>
-                <div className='ShoppingCartSummary'>
+                <div className='ShoppingCart'>
+                  <Link to='/ShoppingCart' className='fas fa-shopping-cart'></Link>
+                  <div className='ShoppingCartSummary'>
+                  </div>
                 </div>
-              </div>
             </div>
           </div>
           <Nav />

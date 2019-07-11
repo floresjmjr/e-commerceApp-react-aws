@@ -5,14 +5,17 @@ import './App.css';
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main';
 import Footer from './Components/Footer/Footer';
+import MyProvider from './ContextAPI/Provider';
 
 
 function App() {
   return (
     <BrowserRouter className="App">
-      <Header />
-      <Main />
-      <Footer/>
+      <MyProvider>
+        <Header />
+        <Main />
+        <Footer/>
+      </MyProvider>
     </BrowserRouter>
   );
 }

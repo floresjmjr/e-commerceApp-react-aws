@@ -18,7 +18,9 @@ const productList = (props) => {
     const destination = `/Product/${productObj.asin}`
     const obj = {
       pathname: destination,
-      state: props.category,
+      state: {
+        category: props.category,
+      }
     }
     return (
       <Link className='ProductItem' key={productObj.asin} to={obj}>

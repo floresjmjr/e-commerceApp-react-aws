@@ -17,12 +17,31 @@ class ProductPage extends Component {
       brand: 'Brand',
       price: "10.00",
     },
-    cart: [],
     qty: 1,
+    cart: [],
   }
 
   componentDidMount() {
-    const formattedCat = encodeURI(this.props.location.state)
+    console.log('compnent mount prps', this.props)
+    this.getProductData();
+    this.getCartData();
+  }
+
+  getCartData = () =>{
+    axios.get('https://e-commerce-jf.firebaseio.com/cart.json')
+    .then((response)=>{
+      const cart = []
+      for(var key in response.data){
+        cart.push(response.data[key])
+      }
+      this.setState({cart: cart, doneLoading: true},()=>{
+        console.log('cartdata', this.state.cart)
+      })
+    })
+  }
+
+  getProductData = () => {
+    const formattedCat = encodeURI(this.props.location.state.category)
     const id = this.props.match.params.id;
     const url = `https://e-commerce-jf.firebaseio.com/${formattedCat}/${id}.json`
     axios.get(url)
@@ -30,14 +49,12 @@ class ProductPage extends Component {
       console.log('product page data', response.data)
       if(response.data.title.includes('&quot;')){
         let titles = response.data.title.split('&quot;');
-        const title = this.capitalize(titles[1])
         response.data.title = titles[1];
         response.data.subtitle = titles[0];
       }
       const productProperties = {...this.state.product, ...response.data}
       this.setState({
         product: productProperties, 
-        doneLoading: true
       })
     })
   }
@@ -48,8 +65,20 @@ class ProductPage extends Component {
       asin: this.state.product.asin,
       title: this.state.product.title,
       price: this.state.product.price,
+      image: this.state.product.imUrl,
+      qty: this.state.qty,
+      category: this.props.location.state.category,
     }
-    console.log('addItemtocart', item);
+    const updatedCart = [...this.state.cart, item]
+    console.log('updatedcart', updatedCart);
+    this.setState({cart: updatedCart},()=>{
+      console.log('cart', this.state.cart);
+      const jsonData = JSON.stringify(this.state.cart)
+      axios.put(`https://e-commerce-jf.firebaseio.com/cart.json`, jsonData)
+      .then((response)=>{
+        console.log('posted')
+      })
+    })
   }
 
   addQty = (event) =>{
@@ -68,8 +97,12 @@ class ProductPage extends Component {
   }
 
   capitalize = (string) =>{
-    const sentence = string.toLowerCase()
-    return sentence[0].toUpperCase() + sentence.slice(1);
+    let sentences = string.split('. ');
+    sentences = sentences.map((sentence)=>{
+      let string = sentence.toLowerCase()
+      return string.substring(0,1).toUpperCase() + string.slice(1);
+    })
+    return sentences.join('. ')
   }
 
   render(){
@@ -81,15 +114,13 @@ class ProductPage extends Component {
             <SlideShow sliderClass='ProductPageSlider' slides={[{image: this.state.product.imUrl}, {image: 'https://via.placeholder.com/600x400'}]}/>
           </div>
           <section className='ProductPageText'>
-            <ProductDetails description={this.state.product.description}/>
-            <ProductProfile 
-              title={this.state.product.title} 
-              brand={this.state.product.subtitle || this.state.product.brand} 
-              price={this.state.product.price}
+            <ProductDetails description={this.capitalize(this.state.product.description)}/>
+            <ProductProfile
+              product={this.state.product}
+              addItem={this.addItemToCart}
               qty={this.state.qty}
               subtract={this.subtractQty}
-              add={this.addQty}
-              addItem={this.addItemToCart}/>
+              add={this.addQty}/>
           </section>
         </div>
       )
