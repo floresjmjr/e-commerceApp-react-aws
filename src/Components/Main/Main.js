@@ -6,7 +6,7 @@ import HomePage from './HomePage/HomePage';
 import ProductPage from './ProductPage/ProductPage';
 import SubcategoryPage from './ProductsPage/SubcategoryPage/SubcategoryPage';
 import CategoryPage from './ProductsPage/CategoryPage/CategoryPage';
-import Checkout from './CheckoutPage/CheckoutPage';
+import Checkout from './Checkout/Checkout';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
 
 const main = (props) => {

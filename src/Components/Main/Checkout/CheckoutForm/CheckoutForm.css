@@ -1,0 +1,51 @@
+
+
+.CheckoutForm {
+  width: 500px;
+  border-bottom: 5px solid rgba(242, 242, 242, 1);
+  color: #04253f;
+  height: 100%;
+}
+
+
+
+.CheckoutForm > section {
+  border-top: 5px solid rgba(242, 242, 242, 1);
+  padding: 20px 0;
+  text-align: left;
+} 
+
+.CheckoutForm  h4 {
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.IdentifyCustomer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.IdentifyCustomer p {
+  align-self: center;
+  padding-right: 100px;
+}
+
+.Billing, .Shipping, .Payment {
+  cursor: pointer;
+}
+
+.CheckoutForm .BillingShippingSame input {
+  display: inline-block;
+  width: auto;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.BillingShippingSame {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

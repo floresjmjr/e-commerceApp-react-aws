@@ -17,7 +17,12 @@ const orderSummary = (props) =>{
         <p>Subtotal:</p>
         <p>{calculateSubTotal()}</p>
       </div>
-      <Link className='ProceedToCheckoutBtn' to='/Checkout'>Checkout</Link>
+      <Link 
+        className='ProceedToCheckoutBtn' 
+        to={{
+          pathname: '/Checkout',
+          state: {subTotal: calculateSubTotal()} 
+        }}>Checkout</Link>
     </section>
   )
 

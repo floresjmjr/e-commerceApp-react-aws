@@ -1,0 +1,51 @@
+
+.CheckoutContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 50px;
+  color: #04253f;
+}
+
+.CheckoutSummary {
+  width: 300px;
+  border: 5px solid rgba(242, 242, 242, 1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 50px;
+  height: 100%;
+}
+
+.CheckoutSummaryHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px 15px;
+  border-bottom: 5px solid rgba(242, 242, 242, 1);
+}
+
+.EditCart {
+  color: #04253f;
+  font-size: 12px;
+}
+
+.CheckoutSummaryTitle {
+  font-size: 18px;
+}
+
+.OrderBreakdown li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 5px solid rgba(242, 242, 242, 1);
+  padding: 15px;
+}
+
+.PlaceOrderBtn {
+  width: 80%;
+  margin: 10px auto;
+  height: 40px;
+  font-size: 20px;
+  color: #04253f;
+  background-color: rgba(242, 242, 242, 1);
+  border-color: #04253f;
+}

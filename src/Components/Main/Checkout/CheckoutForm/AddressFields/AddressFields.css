@@ -1,0 +1,49 @@
+
+.CheckoutName {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.CheckoutName div {
+  width: 100%;
+}
+
+.FirstNameField {
+  margin-right: 10px;
+}
+
+.CheckoutFields label, .CheckoutFields input {
+  display: block;
+}
+
+.CheckoutZipCityState {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.CheckoutZipCityState div {
+  margin-right: 10px;
+}
+
+.CheckoutZipCityState div:last-child {
+  margin: 0;
+}
+
+.CheckoutFields label span {
+  font-size: 12px;
+}
+
+.CheckoutFields label {
+  font-size: 14px;
+  padding: 15px 0 5px 0;
+}
+
+.CheckoutFields input {
+  padding: 10px 0;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}

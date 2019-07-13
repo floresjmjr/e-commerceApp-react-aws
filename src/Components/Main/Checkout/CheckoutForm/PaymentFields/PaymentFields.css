@@ -1,0 +1,64 @@
+
+.PaymentContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.PaymentContainer input[type="text"] {
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.PaymentContainer select {
+  height: 40px;
+  width: 120px;
+  background-color: #fff;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.PaymentContainer section {
+  padding: 10px;
+}
+
+.CreditCardHeader input, .paypalHeader input {
+  margin-right: 10px;
+}
+
+.PaymentLabel {
+  font-size: 18px;
+}
+
+.CreditCardFields {
+  margin: 25px;
+  padding: 20px 0;
+  box-sizing: border-box;
+  border-top: 1px solid #04253f;
+  border-bottom: 1px solid #04253f;
+}
+
+.CreditCardFields input {
+  margin-top: 5px;
+}
+
+.ExpirationSecurityCodeFields {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.CreditCardFields label {
+  display: block;
+}
+
+.CreditCardFields label span {
+  color: crimson;
+}
+
+.PaypalFields {
+  margin: 20px 0 0 20px;
+}
