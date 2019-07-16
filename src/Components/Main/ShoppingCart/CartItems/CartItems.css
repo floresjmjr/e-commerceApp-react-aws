@@ -58,4 +58,8 @@
     max-width: 80px;
   }
 
+  .CartQty select {
+    width: 30px;
+  }
+
 }

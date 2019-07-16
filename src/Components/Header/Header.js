@@ -4,6 +4,8 @@ import { Link, withRouter } from 'react-router-dom'
 import Nav from './Nav/Nav';
 import MobileMenu from './MobileMenu/MobileMenu';
 import SubCatList from './SubCatList/SubCatList';
+// import axios from 'axios'
+
 
 class Header extends Component {
 
@@ -13,15 +15,14 @@ class Header extends Component {
       "Kitchen & Dining", 
       "Artwork", 
       "Furniture", 
-      "Bedding", 
       "Storage & Organization", 
       "Bath", 
       "Heating, Cooling & Air Quality", 
-      "Irons & Steamers", 
       "Vacuums & Floor Care",
     ],
     showMobileMenu: false,
     navLinks: 'categories',
+    searchValue: '',
   }
 
 
@@ -51,29 +52,35 @@ class Header extends Component {
     })
   }
 
-
   goToSubcategoryPage = (event) =>{
-    console.log('event', event.target.value);
     this.props.history.push({
       pathname: event.target.value
     });
   }
 
+  // findProducts = (event) =>{
+  //   event.preventDefault();
+  //   console.log('event', this.state.searchValue)
+  //   axios.get(
+  // }
+
+  updateSearchValue = (event) =>{
+    this.setState({searchValue: event.target.value})
+  }
 
   render() {
 
-    console.log('props', window.location.pathname)
+    // let search = <React.Fragment></React.Fragment>
 
-
-    let search = <React.Fragment></React.Fragment>
-
-    if(this.state.search) {
-      search = (
-        <div className='SearchBoxContainer'>
-          <input type='text' name='searchBox' placeholder='Search'/>
-        </div>
-      )
-    }
+    // if(this.state.search) {
+    //   search = (
+    //     <form className='SearchBoxContainer' onSubmit={this.findProducts}>
+    //       <input 
+    //         type='text' value={this.state.searchValue} name='searchBox' 
+    //         onChange={this.updateSearchValue}placeholder='Search'/>
+    //     </form>
+    //   )
+    // }
 
     let navLinks;
     if(window.innerWidth > 800) {
@@ -87,7 +94,6 @@ class Header extends Component {
     }
 
     
-
     return (
       <header className='PageHeader'>
         <div className='HeaderContainer'>
@@ -100,9 +106,9 @@ class Header extends Component {
               <p className='fas fa-utensils'><Link to='/'><span>Home Kitchen</span></Link></p>
             </div>
             <div className='UserOptions'>
-              <div className='Search'>
+              {/* <div className='Search'>
                 <div className='fas fa-search' onClick={this.displaySearchBox}></div>
-              </div>
+              </div> */}
               <div className='UserAccount'>
                 <p className='fas fa-user'><span>Account</span></p>
               </div>
@@ -115,7 +121,7 @@ class Header extends Component {
           </div>
           {navLinks}
         </div>
-        {search}
+        {/* {search} */}
       </header>
     )
 

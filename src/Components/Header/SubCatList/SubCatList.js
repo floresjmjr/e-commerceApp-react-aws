@@ -14,9 +14,6 @@ const subCatList = (props) =>{
     case "Artwork":
       list = ["Posters & Prints"]
       break;
-    case "Bedding":
-      list = ["Kids' Bedding","Pillows"] 
-      break;
     case "Storage & Organization":
       list = ["Home Storage Hooks","Utility Hooks"]
       break;
@@ -25,9 +22,6 @@ const subCatList = (props) =>{
       break;
     case "Heating, Cooling & Air Quality":
       list = ["Household Fans","Table Fans"]
-      break;
-    case "Irons & Steamers":
-      list = ["Irons","Automatic Turnoff Irons"]
       break;
     case "Vacuums & Floor Care":
       list = ["Vacuums","Handheld Vacuums"]

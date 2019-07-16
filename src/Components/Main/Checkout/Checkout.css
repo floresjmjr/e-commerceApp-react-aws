@@ -64,3 +64,19 @@
   }
 
 }
+
+@media(max-width: 500px) {
+
+  .CheckoutSummary {
+    width: 100%;
+    border: none;
+    border-top: 5px solid #04253f;
+    box-shadow: none;
+  }
+
+  .CheckoutContainer {
+    padding-top: 0;
+  }
+
+
+}

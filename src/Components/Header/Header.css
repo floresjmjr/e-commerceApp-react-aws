@@ -70,8 +70,9 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  top: 20px;
+  top: 30px;
   right: 30px;
+  width: 200px;
 }
 
 .UserOptions > div {
@@ -180,6 +181,8 @@ nav {
 
   .UserOptions {
     top: 15px;
+    right: 20px;
+    width: auto;
   }
 
   .NavLinksContainer {

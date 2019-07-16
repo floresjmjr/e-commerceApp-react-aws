@@ -1,16 +1,23 @@
 main {
   padding-top: 165px;
-  min-height: 100vh;
+  min-height: auto;
   text-align: center;
   position: relative;
+  padding-bottom: 50px;
 }
-
-
 
 @media(max-width: 800px) {
 
   main {
     padding-top: 100px;
+  }
+
+}
+
+@media(max-width: 500px) {
+
+  main {
+    padding-top: 80px;
   }
 
 }
