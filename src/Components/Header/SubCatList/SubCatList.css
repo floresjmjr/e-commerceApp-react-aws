@@ -6,5 +6,8 @@
   width: 100%;
   font-weight: 300;
   color: #a7896f;
+  border: 0;
+  outline: 0;
+  background-color: #fff;
 }
 

@@ -60,6 +60,14 @@
 
   .CartQty select {
     width: 30px;
+    background-color: #fff;
+    border: none;
   }
+
+  .CartQty select::-ms-expand {
+    display: none;
+  } 
+  
+
 
 }
