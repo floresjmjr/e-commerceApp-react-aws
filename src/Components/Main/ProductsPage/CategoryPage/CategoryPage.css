@@ -11,7 +11,13 @@
   width: 80%;
 }
 
+@media(max-width: 800px) {
 
+  .PromotionContainer, .NewArrivalsContainer, .FeaturedContainer {
+    margin: 20px 0;
+  }
+
+}
 
 
 

@@ -1,0 +1,48 @@
+
+.MobileMenu{
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  font-size: 25px;
+}
+
+.MobileMenuList {
+  position: fixed;
+  background-color: whitesmoke;
+  color: #a7896f;
+  padding: 30px;
+  z-index: 200;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+}
+
+.MobileCat {
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border-bottom: 1px solid #a7896f;
+  padding-bottom: 5px;
+}
+
+.MobileHome {
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+  margin-left: 5px;
+}
+
+.MobileHome a, .MobileCat a {
+  text-decoration: none;
+  color: #a7896f;
+  font-weight: 300;
+}
+
+@media(max-width: 800px) {
+  
+  .MobileMenu {
+    display: block;
+  }
+  
+}

@@ -10,28 +10,31 @@ import second from '../SlideShow/Images/karl-chor-UvWlksgZGPE-unsplash.jpg';
 
 class HomePage extends Component {
   
+
+
+
   state = {
     products: [
       { image: 'https://via.placeholder.com/900x400', 
-        title: "Sourcing Vanilla - Rishi's Origin Story to San Luis Potosi",
-        link: 'www.google.com',
-        paragraph: "In 2018, the Rishi team had the opportunity to visit our vanilla farming partners in San Luis Potosí, Mexico. Read on to learn more about this incredible spice."}, 
+        title: "Etiam nec",
+        link: '/Blank',
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, tortor non efficitur luctus, massa urna venenatis tortor, ac lobortis magna purus ut nisi."}, 
       { image: 'https://via.placeholder.com/900x400', 
-        title: 'Makers Spotlight: The Nishi Family',
-        link: 'www.google.com',
-        paragraph: "Learn more about Rishi's 15 year sustainable farming partnership with the Nishi Family."},
+        title: 'Aliquam pharetra ac',
+        link: '/Blank',
+        paragraph: "Mauris iaculis, nisl eget mollis molestie, nunc est tincidunt lectus, volutpat faucibus lectus risus vitae ante."},
       { image: "https://via.placeholder.com/900x400", 
-        title: "Schisandra Berry - A Traditional Adaptogen with a Modern Twist",
-        link: 'www.google.com',
-        paragraph: "Schisandra is renowned for its balanced flavor profile, simultaneously being sweet, tart, salty, spicy, and bitter. Read on on to learn more about this multifaceted adaptogen."},
+        title: "Duis a ipsum",
+        link: '/Blank',
+        paragraph: "Sed augue velit, congue eu fringilla non, aliquam vel lorem."},
       { image: 'https://via.placeholder.com/900x400', 
-        title: "Makers Spotlight: Tsuji-san's Matcha",
-        link: 'www.google.com',
-        paragraph: "This Spring of 2019, Joshua visited the 5th generation tea master, Tsuji San, who is the recipient of many prestigious awards for his matcha."}, 
+        title: "Donec id ornare enim",
+        link: '/Blank',
+        paragraph: "Maecenas risus mi, ornare et elit nec, tempor placerat augue. Fusce volutpat eget enim in semper."}, 
       { image: 'https://via.placeholder.com/900x400', 
-        title: "Majestic Himalaya Teas Pt.2: Innovations in Nepa.",
-        link: 'www.google.com',
-        paragraph: "We end our first round of Himalaya travels in the Jun Chiyabari where the growth of cultivars from many origins is explored in the gardens on the high slopes."},
+        title: "Curabitur lacinia",
+        link: '/Blank',
+        paragraph: "Nulla elementum erat et libero porta varius. "},
     ]  
   }
   

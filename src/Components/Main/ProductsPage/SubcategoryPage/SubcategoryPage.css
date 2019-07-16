@@ -4,3 +4,10 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+
+@media (max-width: 500px) {
+  .ProductListHeader {
+    font-size: 20px;
+  }
+}

@@ -56,7 +56,7 @@ class CheckoutForm extends Component {
   render() {
   
     return (
-      <div className='CheckoutForm'>
+      <section className='CheckoutForm'>
         <section className='IdentifyCustomer'>
           <h4>Customer</h4><p>Returning customer? Login!</p>
         </section>
@@ -81,7 +81,7 @@ class CheckoutForm extends Component {
           <PaymentFields 
             show={this.state.showPayment}/>
         </section>
-      </div>
+      </section>
     )
   }
 }

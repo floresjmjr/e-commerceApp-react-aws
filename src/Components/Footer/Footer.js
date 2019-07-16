@@ -21,16 +21,16 @@ const footer = () => {
       </aside>
       <div className='SocialMediaContainer'>
         <SocialMedia 
-          destination={'https://www.facebook.com/pages/Rishi-Tea/39035256828'} 
+          destination={'https://www.facebook.com/'} 
           image={FacebookImg}/>
         <SocialMedia 
-          destination={'https://www.instagram.com/rishitea/'} 
+          destination={'https://www.instagram.com/'} 
           image={InstagramImg}/>
         <SocialMedia 
-          destination={'https://twitter.com/RishiTea'} 
+          destination={'https://twitter.com/'} 
           image={TwitterImg}/> 
         <SocialMedia 
-          destination={'https://www.youtube.com/c/RishiTea-Botanicals'} 
+          destination={'https://www.youtube.com/'} 
           image={YoutubeImg}/>                       
       </div>
       <div className='ServiceAndCompanyContainer'>

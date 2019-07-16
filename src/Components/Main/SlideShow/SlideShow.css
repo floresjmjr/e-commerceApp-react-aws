@@ -1,6 +1,3 @@
-.SlideShow {
-  margin-bottom: 30px;
-}
 
 .Slide {
   position: relative;
@@ -58,4 +55,22 @@
   font-style: italic;
   width: 80%;
   margin: auto;
+  max-width: 400px;
+}
+
+@media(max-width: 800px) {
+
+  .SlideTitle {
+    font-size: 26px;
+  }
+
+  .SlideParagraph {
+    font-size: 14px;
+  }
+
+  .SlideLink{
+    font-size: 10px;
+  }
+
+
 }

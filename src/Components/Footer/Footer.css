@@ -1,34 +1,35 @@
 
 footer {
   background-color: #c2bdb6;
-  height: 550px;
+  height: 100%;
 }
 
 .ServiceAndCompanyContainer {
-  display: block;
-  width: 80%;
-  padding-top: 40px;
-  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70%;
+  margin: 40px auto;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-size: 12px;
   font-weight: 400;
   box-sizing: border-box;
-  height: 250px;
 }
 
 .Services, .Company {
   display: inline-block;
   vertical-align: top;
   text-align: left;
-  width: 48%;
   position: relative;
   height: 100%;
+  padding-bottom: 70px;
+  width: 100%;
 }
 
 .Services {
-  margin-right: 4%;
+  margin-right: 40px;
 }
 
 .FooterTitles {
@@ -41,6 +42,7 @@ footer {
   width: 50%;
   margin-top: 10px;
   vertical-align: top;
+  text-transform: capitalize;
 }
 
 .FooterLists > li {
@@ -134,4 +136,46 @@ aside {
 } 
 .EmailSubscription input:focus:-ms-input-placeholder {
   color: transparent;
+}
+
+@media (max-width: 800px) {
+
+  .EmailSubscription input, .EmailSubscription button {
+    font-size: 13px;
+  }
+
+  aside {
+    height: 100px;
+  }
+
+  .SocialMediaContainer {
+    padding: 20px 0;
+  }
+
+  .SocialMediaContainer img {
+    width: 70%;
+  }
+
+}
+
+@media(max-width: 500px) {
+
+  .ServiceAndCompanyContainer {
+    flex-direction: column;
+    width: 80%;
+    margin: 30px auto;
+  }
+
+  .Services, .Company {
+    margin-bottom: 40px;
+  }
+
+  .Services {
+    margin-right: 0;
+  }
+
+  .EmailSubscription {
+    width: 80%;
+  }
+
 }

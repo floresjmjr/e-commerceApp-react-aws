@@ -34,5 +34,28 @@
 .CartItemTitle{
   vertical-align: top;
   margin: auto;
-  width: 200px;
+  max-width: 200px;
+}
+
+
+@media(max-width: 500px) {
+
+  .ShoppingCartTitle {
+    font-size: 18px;
+    padding: 0 0 10px 0;
+  }
+
+  .CartTable {
+    margin: 0;
+    width: 100%;
+  }
+
+  .CartTable th, .CartTable td {
+    font-size: 12px;
+  }
+
+  .CartItemDescription {
+    max-width: 80px;
+  }
+
 }

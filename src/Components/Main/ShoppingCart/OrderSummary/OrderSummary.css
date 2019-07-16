@@ -26,3 +26,11 @@
   background-color: #04253f;
   color: whitesmoke;
 }
+
+@media(max-width: 500px) {
+
+  .OrderSummaryContainer {
+    font-size: 18px;
+  }
+
+}

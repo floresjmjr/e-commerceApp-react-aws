@@ -8,9 +8,7 @@
 }
 
 .ProductItem {
-  width: 30%;
   border: 1px solid #00263e;
-  margin-right: 5%;
   margin-bottom: 20px;
   padding-top: 5px;
   display: flex;
@@ -49,4 +47,24 @@
 
 .ProductImage {
   max-width: 100%;
+}
+
+@media (max-width: 800px) {
+
+  .ProductTitle, .ProductPrice, .ProductSubTitle {
+    font-size: 13px;
+  }
+
+  .ProductItem {
+    width: 300px;
+  }
+
+}
+
+@media(max-width: 500px) {
+
+  .ProductItem {
+    width: 150px;
+  }
+
 }

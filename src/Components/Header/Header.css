@@ -32,7 +32,6 @@ nav {
   width: 100%;
   margin: auto;
   border-top: 1px solid #a7896f;
-  width: 100%;
 }
 
 .HeaderContainer {
@@ -59,7 +58,6 @@ nav {
 
 .Logo, .Logo a {
   font-size: 36px;
-  margin-right: 50px;
   text-transform: uppercase;
   font-weight: 300;
   text-decoration: none;
@@ -73,14 +71,18 @@ nav {
   justify-content: space-between;
   align-items: center;
   top: 20px;
-  right: 20px;
+  right: 30px;
 }
 
 .UserOptions > div {
   margin-right: 20px;
 }
 
-.Search {
+.UserOptions > div:last-child {
+  margin: 0;
+}
+
+.Search, .ShoppingCart, .UserAccount {
   font-size: 20px;
 }
 
@@ -96,21 +98,14 @@ nav {
   font-weight: bold;
 }
 
-.ShoppingCart {
-  font-size: 20px;
-}
-
 .ShoppingCart a {
   color: #a98a70;
   text-decoration: none;
 }
 
-.UserAccount {
-  font-size: 20px;
-}
-
 .UserAccount span {
   margin-left: 5px;
+  font-weight: 300;
 }
 
 .ShoppingCartSummary {
@@ -137,4 +132,82 @@ nav {
   outline: none;
   padding-left: 15px;
   font-size: 20px;
+}
+
+.SearchBoxContainer input::placeholder {
+  color: #04253f;
+  opacity: .3;
+}
+
+.SearchBoxContainer input:-ms-input-placeholder {
+  color: #04253f;
+  opacity: .3;
+}
+
+.SearchBoxContainer input::-ms-input-placeholder {
+  color: #04253f;
+  opacity: .3;
+}
+
+@media(max-width: 800px) {
+  .NavLinks li {
+    font-size: 12px;
+  }
+
+  .Logo {
+    margin-left: 20px;
+  }
+
+  .Logo, .Logo a {
+    font-size: 25px;
+  }
+
+  .Search, .ShoppingCart, .UserAccount  {
+    font-size: 16px;
+  }
+
+}
+
+@media(max-width: 500px) {
+  .NavLinks li {
+    margin: 5px;
+    letter-spacing: 0;
+  }
+
+  .TopHeader{
+    padding: 10px 0;
+  }
+
+  .UserOptions {
+    top: 15px;
+  }
+
+  .NavLinksContainer {
+    width: 100%;
+  }
+
+  .Logo {
+    margin-left: 10px;
+  }
+
+  .Logo a {
+    font-size: 20px;
+  }
+
+  .Logo p {
+    vertical-align: top;
+  }
+
+  .UserAccount span {
+    display: none;
+  }
+
+  .fa-utensils:before {
+    display: none;
+  }
+
+  .UserOptions > div {
+    margin-right: 10px;
+  }
+
 }

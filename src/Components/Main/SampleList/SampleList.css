@@ -7,7 +7,7 @@
   font-weight: 500;
 }
 
-.SampleParagraph {
+.SampleSubtitle {
   font-family: "Sentinel A", "Sentinal B";
   color: #00263e;
   font-weight: 400;
@@ -26,7 +26,8 @@
 .FrontSamplesList {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
   border-top: 1px solid #00263e;
   padding: 50px 0;
   box-sizing: border-box;
@@ -35,5 +36,44 @@
 }
 
 .FrontSamplesList li {
-  width: 250px;
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+.FrontSamplesList li:last-child {
+  margin: 0;
+}
+
+@media(max-width: 800px) {
+
+  .SampleTitle {
+    font-size: 16px;
+  }
+
+  .SampleSubtitle {
+    font-size: 13px;
+  }
+
+  .FrontSamplesList {
+    padding: 25px 0;
+    width: 100%;
+  }
+
+  .FrontSamplesTitle {
+    font-size: 15px;
+  }
+
+  .FrontSamplesList li img {
+    width: 100%
+  }
+
+}
+
+@media(max-width: 500px) {
+
+  .FrontSamplesList {
+    width: auto;
+    flex-wrap: wrap;
+  }
+
 }

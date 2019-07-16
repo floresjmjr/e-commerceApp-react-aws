@@ -4,3 +4,13 @@ main {
   text-align: center;
   position: relative;
 }
+
+
+
+@media(max-width: 800px) {
+
+  main {
+    padding-top: 100px;
+  }
+
+}
