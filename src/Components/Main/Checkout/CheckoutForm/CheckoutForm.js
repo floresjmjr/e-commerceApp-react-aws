@@ -6,80 +6,147 @@ import PaymentFields from './PaymentFields/PaymentFields';
 class CheckoutForm extends Component {
   
   state = {
-    showBilling: true,
-    showShipping: false,
-    showPayment: false,
-    payment: false,
+    show: {
+      billing: false,
+      shipping: false,
+      payment: false,
+      customer: true,
+    },
+    shippingFormData: {
+      firstName: {value: '', valid: false, className: ''},
+      lastName: {value: '', valid: false, className: ''},
+      firstAddress: {value: '', valid: false, className: ''},
+      secondAddress: {value: '', valid: false, className: ''},
+      zip: {value: '', valid: false, className: ''},
+      city: {value: '', valid: false, className: ''},
+      state: {value: '', valid: false, className: ''},
+    },
+    billingFormData: {
+      firstName: {value: '', valid: false, className: ''},
+      lastName: {value: '', valid: false, className: ''},
+      firstAddress: {value: '', valid: false, className: ''},
+      secondAddress: {value: '', valid: false, className: ''},
+      zip: {value: '', valid: false, className: ''},
+      city: {value: '', valid: false, className: ''},
+      state: {value: '', valid: false, className: ''},
+    },
+    email: {value: '', valid: false},
     sameAsBilling: false,
-    shipping: {},
-    billing: {},
   }
-
 
   toggleFormFields = (type) =>{
     let obj = {};
-    obj[type] = !this.state[type]
+    obj['show'] = {}
+    obj.show[type] = !this.state.show[type]
     this.setState(obj)
   }
 
-  updateBillingData = (event) =>{
-    this.updateFormData('billing', event)
+  updateEmailHandler = (event) => {
+    this.setState({email: {value: event.target.value}})
   }
 
-  updateShippingData = (event) =>{
-    this.updateFormData('shipping', event)
+  emailSubFormHandler = (event) => {
+    event.preventDefault();
+    if(this.validateEmail(event)){
+      this.setState({showCustomer: false, showBilling: true})
+    } else {
+      alert('Please provide a valid email');
+    }
   }
 
-  updateFormData = (type, event) =>{
-    let data = {...this.state[type]}
-    data[event.target.name] = event.target.value;
-    // console.log('data', data)
-    const state = {};
-    state[type] = data;
-    this.setState(state, ()=>{
-      // console.log(state);
-    })
+  validateEmail = (event)=> {
+    if(this.state.email.value.match(/\S+@\S+\.\S+/)){
+      let email = {...this.state.email}
+      email['valid'] = true;
+      email['className'] = '';
+      this.setState({email: email})
+      event.target.parentElement.classList.remove('InvalidInput')
+    } else {
+      let email = {...this.state.email}
+      email['valid'] = false;
+      email['className'] = 'InvalidInput';
+      this.setState({email: email})      
+      event.target.parentElement.classList.add('InvalidInput')
+    }
   }
 
   sameAsBilling = () => {
-    this.setState({sameAsBilling: !this.state.sameAsBilling}, ()=>{
-      if(this.state.sameAsBilling){
-        let billing = {...this.state.billing}
-        console.log('billing', billing);
-        this.setState({shipping: billing}) 
-      } else {
-        this.setState({shipping: {}})
-      }
-    })
+    this.setState({sameAsBilling: !this.state.sameAsBilling})
+  }
+
+  updateCheckoutForm = (form, values, name) =>{
+    let formData = {}
+    let updatedFormData = {...this.state[form]}
+    updatedFormData[name] = values
+    formData[form] = updatedFormData;
+    this.setState(formData)
+  }
+
+  updateFieldClass = (form, value, name) =>{
+    let container = {}
+    let formData = {...this.state[form]}
+    formData[name]['className'] = value;
+    container[form] = formData;
+    this.setState(container)
   }
 
   render() {
-  
+
+    console.log('same', this.state.billingFormData.firstName)
+
+    let emailSection = <React.Fragment></React.Fragment>
+
+    if(this.state.show.customer) {
+      emailSection = (
+        <form onSubmit={this.emailSubFormHandler} className={`IdentifyCustomerForm ${this.state.email.className}`}>
+          <label>Email</label>
+          <input name='email' value={this.state.email.value} 
+            type='email' onChange={this.updateEmailHandler} onBlur={this.validateEmail}/>
+        </form>
+      )
+    }
+
+    let formData = this.state.shippingFormData;
+
+    if(this.state.sameAsBilling) {
+      formData = this.state.billingFormData;
+    }
+
     return (
       <section className='CheckoutForm'>
-        <section className='IdentifyCustomer'>
-          <h4>Customer</h4><p>Returning customer? Login!</p>
+        <section>
+          <div className='IdentifyCustomer'>
+            <h4 onClick={() => this.toggleFormFields('customer')}>Customer</h4>
+            <p>Returning customer? Login!</p>
+          </div>
+          {emailSection}
         </section>
         <section className='Billing'>
-          <h4 onClick={() => this.toggleFormFields('showBilling')}>Billing</h4>
+          <h4 onClick={() => this.toggleFormFields('billing')}>Billing</h4>
           <AddressFields 
-            updateFormData={this.updateBillingData} 
-            show={this.state.showBilling}
-            formData={this.state.billing}
-            billing={true}
+            show={this.state.show.billing}
+            form={'billingFormData'}
+            formValues={this.state.billingFormData}
+            updateCheckoutForm={this.updateCheckoutForm}
+            sameAsBillingValue={this.state.sameAsBilling}
+            updateFieldClass={this.updateFieldClass}
             sameAsBilling={this.sameAsBilling}/>
         </section>
         <section className='Shipping'>
-          <h4 onClick={() => this.toggleFormFields('showShipping')}>Shipping</h4>
-          <AddressFields 
-            updateFormData={this.updateShippingData} 
-            show={this.state.showShipping}
-            formData={this.state.shipping}/>
+          <h4 onClick={() => this.toggleFormFields('shipping')}>Shipping</h4>
+          <AddressFields
+            show={this.state.show.shipping}
+            form={'shippingFormData'}
+            formValues={formData}
+            updateFieldClass={this.updateFieldClass}
+            updateCheckoutForm={this.updateCheckoutForm}/>
         </section>
         <section className='Payment'>
-          <h4 onClick={() => this.toggleFormFields('showPayment')}>Payment</h4>
-          <PaymentFields 
-            show={this.state.showPayment}/>
+          <h4 onClick={() => this.toggleFormFields('payment')}>Payment</h4>
+          <PaymentFields
+            show={this.state.show.payment}
+            // formValues={true}
+            updateCheckoutForm={this.updateCheckoutForm}/> 
         </section>
       </section>
     )

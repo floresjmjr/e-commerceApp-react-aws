@@ -37,17 +37,30 @@ const subCatList = (props) =>{
 
   if(window.innerWidth <= 500) {
     
-    list = list.map((subCat)=>{
-      return ( 
-        <option key={subCat} className='NavOption' value={`/Category/${props.category}/Subcategory/${subCat}`}>{subCat}</option>
-      )
-    })
+
+
+    if(props.show) {
+      list = list.map((subCat)=>{
+        return ( 
+          <li key={subCat} className='subcatListItem' onClick={props.closeMenu}>
+            <Link to={`/Category/${props.category}/Subcategory/${subCat}`} 
+              className='subcatLink' >
+              {subCat}
+            </Link>
+          </li>
+        )
+      })
+    } else {
+      list = '';
+    }
 
     navLinks = (
-      <select value='Select Subcategory' className='NavSelect' onChange={props.subcategoryPage}>
-        <option value={`/Category/${props.category}`}>Select Subcategory</option>
-        {list}
-      </select>
+      <div>
+        <h5 onClick={props.toggle} className='SelectSubcategory'>Select Subcategory</h5>
+        <ul value='Select Subcategory'>
+          {list}
+        </ul>
+      </div>
     )
 
   } else {
@@ -55,7 +68,9 @@ const subCatList = (props) =>{
     list = list.map((subCat)=>{
       return (
         <li className='NavLink'>
-          <Link to={`/Category/${props.category}/Subcategory/${subCat}`}>{subCat}</Link>
+          <Link to={`/Category/${props.category}/Subcategory/${subCat}`}>
+            {subCat}
+          </Link>
         </li>
       )
     })

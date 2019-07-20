@@ -24,6 +24,25 @@
   justify-content: space-between;
 }
 
+.IdentifyCustomerForm{
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.IdentifyCustomerForm label  {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.IdentifyCustomerForm input {
+  padding: 10px 0;
+  width: 60%;
+  padding-left: 10px;
+  box-sizing: border-box;
+  border-color: inherit !important;
+}
+
 .IdentifyCustomer p {
   align-self: center;
   padding-right: 100px;
@@ -50,6 +69,11 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+.InvalidInput {
+  border-color: crimson !important;
+  color: crimson !important;
 }
 
 @media(max-width: 500px) {

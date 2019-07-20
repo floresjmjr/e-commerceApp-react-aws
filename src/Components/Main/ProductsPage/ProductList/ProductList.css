@@ -16,6 +16,7 @@
   align-items: center;
   text-decoration: none;
   box-sizing: border-box;
+  width: 300px;
 }
 
 .ProductItem:nth-child(3n) {
@@ -30,10 +31,13 @@
   width: 80%;
   justify-self: bottom;
   margin: auto;
+  max-width: 300px;
 }
 
 .ProductSubTitle {
   color: #00263e;
+  width: 80%;
+  margin: auto;
 }
 
 .ProductList {
@@ -46,17 +50,13 @@
 }
 
 .ProductImage {
-  max-width: 100%;
+  max-width: 90%;
 }
 
 @media (max-width: 800px) {
 
   .ProductTitle, .ProductPrice, .ProductSubTitle {
     font-size: 13px;
-  }
-
-  .ProductItem {
-    width: 300px;
   }
 
 }

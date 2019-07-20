@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './Footer.css';
 
 import SocialMedia from './SocialMedia/SocialMedia';
@@ -7,74 +7,63 @@ import FacebookImg from './Images/facebook.png';
 import InstagramImg from './Images/instagram.png';
 import TwitterImg from './Images/twitter.png';
 import YoutubeImg from './Images/youtube.png';
+import FooterLinks from './FooterLinks/FooterLinks';
 
-const footer = () => {
 
-  return (
-  
-    <footer>
-      <aside>
-        <form className='EmailSubscription'>
-          <input type='email' name='email' placeholder='Subscribe for deals and promotions!'/>
-          <button type='submit' name='submitButton'>Submit</button>
-        </form>
-      </aside>
-      <div className='SocialMediaContainer'>
-        <SocialMedia 
-          destination={'https://www.facebook.com/'} 
-          image={FacebookImg}/>
-        <SocialMedia 
-          destination={'https://www.instagram.com/'} 
-          image={InstagramImg}/>
-        <SocialMedia 
-          destination={'https://twitter.com/'} 
-          image={TwitterImg}/> 
-        <SocialMedia 
-          destination={'https://www.youtube.com/'} 
-          image={YoutubeImg}/>                       
-      </div>
-      <div className='ServiceAndCompanyContainer'>
-        <section className='Services'>
-          <h5 className='FooterTitles'>Service</h5>
-          <ul className='FooterLists'>
-            <li>Contact Us</li>
-            <li>FAQS</li>
-            <li>Shipping</li>
-          </ul>
-          <ul className='FooterLists'>
-            <li>Track Order</li>
-            <li>Exchanges & Returns</li>
-          </ul>
-          <div className='ContactInfo'>
-            <p>Customer Service</p>
-            <p>1-(800) 123-4567 | M-F 9AM to 7pm EST</p>
-          </div>
-        </section>
-        <section className='Company'>
-          <h5 className='FooterTitles'>Company</h5>
-          <ul className='FooterLists'>
-            <li>About</li>
-            <li>Careers</li>
-            <li>Press</li>
-            <li>Gifts</li>
-          </ul>
-          <ul className='FooterLists'>
-            <li>Wholesale</li>
-            <li>Catalogs</li>
-            <li>Privacy Policy</li>
-            <li>Terms & Conditions</li>
-          </ul>
-          <div className='Copyright'>
-            <p>&#9400; 2019 Jorge Flores</p>
-          </div>
-        </section>
-      </div>
-    </footer>
+class Footer extends Component {
 
-  )
+  state = {
+    email: '',
+  }
+
+  emailSubFormHandler = (event) => {
+    event.preventDefault();
+    alert('Subscribed to Promotions!')
+    if(this.state.email.match(/\S+@\S+\.\S+/)){
+      document.querySelector('aside').style.display = 'none';
+    } else {
+      alert('Please provide a valid email');
+    }
+  }
+
+  updateEmailHandler = (event) =>{
+    this.setState({email: event.target.value})
+  }
+
+  render() {
+
+    return (
+    
+      <footer>
+        <aside>
+          <form className='EmailSubscription' onSubmit={this.emailSubFormHandler}>
+            <input type='email' name='email' onChange={this.updateEmailHandler} value={this.state.email}
+              placeholder='Subscribe for deals and promotions!'/>
+            <button type='submit' name='submitButton'>Submit</button>
+          </form>
+        </aside>
+        <div className='SocialMediaContainer'>
+          <SocialMedia 
+            destination={'https://www.facebook.com/'} 
+            image={FacebookImg}/>
+          <SocialMedia 
+            destination={'https://www.instagram.com/'} 
+            image={InstagramImg}/>
+          <SocialMedia 
+            destination={'https://twitter.com/'} 
+            image={TwitterImg}/> 
+          <SocialMedia 
+            destination={'https://www.youtube.com/'} 
+            image={YoutubeImg}/>                       
+        </div>
+        <FooterLinks />
+      </footer>
+    )
+
+  }
 
 }
 
 
 
-export default footer;
+export default Footer;

@@ -23,6 +23,7 @@ class Header extends Component {
     showMobileMenu: false,
     navLinks: 'categories',
     searchValue: '',
+    showSubcategories: false,
   }
 
 
@@ -52,11 +53,11 @@ class Header extends Component {
     })
   }
 
-  goToSubcategoryPage = (event) =>{
-    this.props.history.push({
-      pathname: event.target.value
-    });
-  }
+  // goToSubcategoryPage = (event) =>{
+  //   this.props.history.push({
+  //     pathname: event.target.value
+  //   });
+  // }
 
   // findProducts = (event) =>{
   //   event.preventDefault();
@@ -66,6 +67,15 @@ class Header extends Component {
 
   updateSearchValue = (event) =>{
     this.setState({searchValue: event.target.value})
+  }
+
+  toggleSubcategories = () => {
+    this.setState({showSubcategories: !this.state.showSubcategories})
+  }
+
+  closeSubcatMenu = () => {
+    console.log('show', this.state.showSubcategories)
+    this.setState({showSubcategories: false})
   }
 
   render() {
@@ -89,7 +99,11 @@ class Header extends Component {
       let paths = window.location.pathname.split('Category');
       if(paths.length === 2) {
         const category = decodeURIComponent(window.location.pathname.split('/',3)[2])
-        navLinks = <SubCatList subcategoryPage={this.goToSubcategoryPage} category={category} />
+        navLinks =  (
+          <SubCatList subcategoryPage={this.goToSubcategoryPage} 
+            show={this.state.showSubcategories} category={category} 
+            toggle={this.toggleSubcategories} closeMenu={this.closeSubcatMenu}/>
+        )
       }
     }
 
@@ -113,7 +127,7 @@ class Header extends Component {
                 <p className='fas fa-user'><span>Account</span></p>
               </div>
               <div className='ShoppingCart'>
-                <Link to='/ShoppingCart' className='fas fa-shopping-cart'></Link>
+                <Link to='/ShoppingCart' className='fas fa-shopping-cart'><span>Cart</span></Link>
                 <div className='ShoppingCartSummary'>
                 </div>
               </div>
