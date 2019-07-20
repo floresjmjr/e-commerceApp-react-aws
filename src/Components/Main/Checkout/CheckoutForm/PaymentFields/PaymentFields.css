@@ -13,14 +13,16 @@
 
 .PaymentContainer select {
   height: 40px;
-  width: 120px;
+  width: 100px;
   background-color: #fff;
   font-size: 16px;
   display: inline-block;
   margin: 0 auto;
+  border-radius: 0;
+  border: 1px solid #04253f;
 }
 
-.PaymentContainer section {
+.CreditCardContainer {
   padding: 10px;
 }
 
@@ -62,4 +64,16 @@
 
 .PaypalFields {
   margin: 20px 0 0 20px;
+}
+
+@media(max-width: 500px) {
+
+  .CreditCardContainer {
+    padding: 10px 0;
+  }
+
+  .PaymentContainer {
+    margin: auto 0 !important;
+  }
+
 }

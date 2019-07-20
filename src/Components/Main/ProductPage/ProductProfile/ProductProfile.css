@@ -8,6 +8,18 @@
   color: #04253f;
 }
 
+.ProductPageSubtitle {
+  margin-bottom: 5px;
+}
+
+.ProductPageRating i {
+  margin-bottom: 5px;
+}
+
+.ProductPagePrice {
+  margin-bottom: 5px;
+}
+
 .ProductPageProfile {
   text-align: left;
 }
@@ -56,6 +68,7 @@
   border: 1px solid #00263e;
   text-transform: uppercase;
   font-size: 14px;
+  margin: 10px auto 0 auto;
 }
 
 .SubmitItem span {
@@ -66,4 +79,81 @@
   list-style-type: disc;
   padding-left: 40px;
   color: #04253f;
+}
+
+.ProductPageForm {
+  text-align: center;
+}
+
+@media(max-width: 800px) {
+
+  .ProductPageDetails div {
+    margin-bottom: 20px;
+  }
+
+  .ProductPageSpecList li {
+    font-size: 14px;
+  }
+
+  .ProductPageTitle {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .ProductPageSubtitle {
+    font-size: 14px;
+  }
+
+  .SubtractQuantity, .AddQuantity {
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+  }
+
+  .ProductPageQuantity {
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+  }
+
+  .SubmitItem {
+    font-size: 12px;
+    width: 150px;
+  }
+
+}
+
+@media(max-width: 500px) {
+
+  .ProductPageDetails, .ProductPageProfile {
+    width: 100% !important;
+  }
+
+  .ProductPageProfile {
+    margin-bottom: 20px;
+  }
+
+  .ProductPageTitle {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .ProductPageRating {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+
+  .ProductPageSubtitle, .ProductPagePrice {
+    text-align: center;
+  }
+
+  .ProductPageSpecList {
+    padding: 20px 40px 0 50px;
+  }
+
+
 }

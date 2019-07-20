@@ -7,8 +7,6 @@ const productProfile = (props) =>{
     <div className='ProductPageProfile'>
       <section className='ProductPageHeader'>
         <h3 className='ProductPageTitle'>{props.product.title}</h3>
-        <h5 className='ProductPageSubtitle'>{props.product.subtitle || props.product.brand}</h5>
-        <p className='ProductPagePrice'>${props.product.price}</p>
         <a href='##' className='ProductPageRating'>
           <i className='far fa-star'/>
           <i className='far fa-star'/>
@@ -16,6 +14,8 @@ const productProfile = (props) =>{
           <i className='far fa-star'/>
           <i className='far fa-star'/>
         </a>
+        <h5 className='ProductPageSubtitle'>{props.product.subtitle || props.product.brand}</h5>
+        <p className='ProductPagePrice'>${props.product.price}</p>
       </section>
       <form className='ProductPageForm'>
         <button onClick={props.subtract} className='SubtractQuantity'>-</button>

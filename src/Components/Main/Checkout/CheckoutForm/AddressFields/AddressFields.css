@@ -49,3 +49,11 @@
   border-color: inherit !important;
 }
 
+.State select {
+  width: auto;
+  height: 40px;
+  border: 1px solid #04253f;
+  border-radius: 0;
+  background-color: #fff;
+  color: black;
+}

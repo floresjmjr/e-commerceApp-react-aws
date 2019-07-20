@@ -1,5 +1,7 @@
 import React from 'react';
 import './AddressFields.css';
+import State from './State/State.js'
+
 
 const addressFields = (props) => {
 
@@ -129,10 +131,9 @@ const addressFields = (props) => {
               <input onChange={updateValue} name='city' type='text'
                 value={props.formValues.city.value} onBlur={validateField}/>
             </div>
-            <div className={`State ${props.formValues.state.className}`}>
-              <label>State (Abbreviation)</label>
-              <input onChange={updateValue} name='state' type='text'
-                value={props.formValues.state.value} onBlur={validateField}/>
+            <div className='State'>
+              <label>State</label>
+              <State value={props.formValues.state.value} updateValue={updateValue}/>
             </div>
           </li>
         </ul>

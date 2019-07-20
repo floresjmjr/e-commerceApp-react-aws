@@ -17,3 +17,26 @@
   padding-left: 15px;
   color: #04253f;
 }
+
+@media(max-width: 800px) {
+
+  .ProductPageDescriptionTitle, .ProductPageSpecTitle {
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .ProductPageDescription {
+    font-size: 14px; 
+  }
+
+}
+
+@media(max-width: 500px) {
+  .ProductPageDescription {
+    padding: 10px 30px;
+  }
+  
+  .ProductPageDescriptionTitle, .ProductPageSpecTitle {
+    text-align: center;
+  }
+}

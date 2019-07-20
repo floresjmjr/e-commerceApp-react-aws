@@ -167,6 +167,10 @@ nav {
     font-size: 16px;
   }
 
+  .UserOptions {
+    width: 150px;
+  }
+
 }
 
 @media(max-width: 500px) {

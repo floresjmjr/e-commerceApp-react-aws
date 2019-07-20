@@ -5,6 +5,7 @@ const paymentFields = (props) =>{
 
   const months = (
     <select name='expMonth'>
+      <option value=''></option>
       <option value="January">January</option>
       <option value="February">February</option>
       <option value="March">March</option>
@@ -22,6 +23,7 @@ const paymentFields = (props) =>{
 
   const years = (
     <select >
+      <option value=''></option>
       <option value='2019'>2019</option>
       <option value='2020'>2020</option>
       <option value='2021'>2021</option>
@@ -84,7 +86,7 @@ const paymentFields = (props) =>{
 
 
   return (
-    <div>{form}</div>
+    <React.Fragment>{form}</React.Fragment>
   )
 
 
