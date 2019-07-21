@@ -1,9 +1,11 @@
 main {
   padding-top: 165px;
   min-height: auto;
-  text-align: center;
   position: relative;
   padding-bottom: 50px;
+  max-width: 1300px;
+  margin: auto;
+  text-align: center;
 }
 
 @media(max-width: 800px) {
