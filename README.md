@@ -11,7 +11,6 @@ The dataset that was used came from http://jmcauley.ucsd.edu/data/amazon/links.h
 * CSS
 * JavaScript
 * React
-* *I'm currently learning redux and will make changes to this app incorporating redux.
 
 ### Back-end
 * No backend currently but will be using AWS Lambda functions (FaaS) soon to process the payment as the app gets developed further so the app can have a serverless architecture.
@@ -21,3 +20,22 @@ The dataset that was used came from http://jmcauley.ucsd.edu/data/amazon/links.h
 
 ### Deployment
 * Firebase  (This will also change once I starting using AWS Lambda functions and other AWS microservices)
+
+## Phases
+### First Phase
+* Menu with drop submenu (DONE)
+* Create both a default category page and a page per subcategory (DONE)
+* Sliders where appropriate (DONE)
+* Use data set that can fill in as much of the product information as possible and create categories and subcategories (DONE)
+* Create shopping cart that updates as the quantity fluctuates or deletes (DONE)
+* Create a checkout page with payment field, billing/shipping field and email field. (DONE)
+* Create form validation for the email, billing and shipping. (DONE)
+
+### Second Phase
+* Create validation for payment field.
+* Learn redux and make the 'cart' (nav) more informative with qty and total price
+* Allow a user to process an order by validating inputs and create an order page summarizing the data. (In progress)
+* Allow a user to search for any product and make the search have autocomplete functionality (In progress)
+* Investigate and setup the payment processing aspect of an e-commerce site using AWS Lambda functions.
+
+
