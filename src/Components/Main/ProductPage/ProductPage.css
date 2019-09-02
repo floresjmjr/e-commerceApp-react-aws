@@ -2,16 +2,17 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  margin-top: 40px;
+  margin: 0 10px;
 }
 
 .ProductPageImages img {
-  width: 80%;
-  max-width: 250px;
 }
 
 @media(max-width: 500px) {
   .ProductPageText {
     flex-direction: column-reverse;
+    margin: 40px 0 0 0;
   }
 
 }

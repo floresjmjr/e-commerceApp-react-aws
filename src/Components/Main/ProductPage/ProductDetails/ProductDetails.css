@@ -1,6 +1,12 @@
 .ProductPageDetails, .ProductPageProfile {
-  width: 40%;
+  width: 45%;
   text-align: left;
+}
+
+.ProductPageProfile {
+  max-width: 350px;
+  margin: 10px auto;
+
 }
 
 .ProductPageDescriptionTitle, .ProductPageSpecTitle {

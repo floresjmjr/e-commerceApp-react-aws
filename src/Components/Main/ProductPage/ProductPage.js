@@ -27,19 +27,6 @@ class ProductPage extends Component {
     this.getCartData();
   }
 
-  getCartData = () =>{
-    axios.get('https://e-commerce-jf.firebaseio.com/cart.json')
-    .then((response)=>{
-      const cart = []
-      for(var key in response.data){
-        cart.push(response.data[key])
-      }
-      this.setState({cart: cart, doneLoading: true},()=>{
-        console.log('cartdata', this.state.cart)
-      })
-    })
-  }
-
   getProductData = () => {
     const formattedCat = encodeURI(this.props.location.state.category)
     const id = this.props.match.params.id;
@@ -58,6 +45,21 @@ class ProductPage extends Component {
       })
     })
   }
+
+  getCartData = () =>{
+    axios.get('https://e-commerce-jf.firebaseio.com/cart.json')
+    .then((response)=>{
+      const cart = []
+      for(var key in response.data){
+        cart.push(response.data[key])
+      }
+      this.setState({cart: cart, doneLoading: true},()=>{
+        console.log('cartdata', this.state.cart)
+      })
+    })
+  }
+
+
 
   addItemToCart = (event) =>{
     event.preventDefault();
@@ -114,7 +116,8 @@ class ProductPage extends Component {
             <SlideShow sliderClass='ProductPageSlider' slides={[{image: this.state.product.imUrl}, {image: 'https://via.placeholder.com/600x400'}]}/>
           </div>
           <section className='ProductPageText'>
-            <ProductDetails description={this.capitalize(this.state.product.description)}/>
+            <ProductDetails 
+              description={this.capitalize(this.state.product.description)}/>
             <ProductProfile
               product={this.state.product}
               addItem={this.addItemToCart}

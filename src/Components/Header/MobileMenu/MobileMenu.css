@@ -39,6 +39,11 @@
   font-weight: 300;
 }
 
+.MobileCat a {
+  display: inline-block;
+  width: 100%;
+}
+
 @media(max-width: 800px) {
   
   .MobileMenu {

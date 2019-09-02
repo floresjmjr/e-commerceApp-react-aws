@@ -67,7 +67,7 @@ const subCatList = (props) =>{
 
     list = list.map((subCat)=>{
       return (
-        <li className='NavLink'>
+        <li className='NavLink' key={subCat}>
           <Link to={`/Category/${props.category}/Subcategory/${subCat}`}>
             {subCat}
           </Link>

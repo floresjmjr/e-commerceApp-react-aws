@@ -19,7 +19,7 @@ const productDetails = (props) =>{
     <div className='ProductPageDetails'>
       <div className='ProductPageDescriptionContainer'>
         <h4 className='ProductPageDescriptionTitle'>Product Description</h4>
-        <p className='ProductPageDescription'>{props.description}</p>
+        <p className='ProductPageDescription'>{props.description || "Sorry, no product description."}</p>
       </div>
       <div className='ProductPageSpecContainer'>
         <h4 className='ProductPageSpecTitle'>Product Specs</h4>
