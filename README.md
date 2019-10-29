@@ -1,5 +1,8 @@
 # E-Commerce App
 
+## Why
+Was inspired by a tech conference talk about how servless architecture is the future.  I wanted to see how practical it is and how it would go about working.  It forced me to learn React and research serveless technology like AWS Lambda and Netlify's similar service. 
+
 ## Background
 An e-commerce web page that has an interactive navigation menu, multiple categories and subcategories, slides, shopping cart and checkout forms while partially using an amazon data set that was parsed to add a variety of products.
 
@@ -13,29 +16,34 @@ The dataset that was used came from http://jmcauley.ucsd.edu/data/amazon/links.h
 * React
 
 ### Back-end
-* No backend currently but will be using AWS Lambda functions (FaaS) soon to process the payment as the app gets developed further so the app can have a serverless architecture.
+* No backend but working on setting up lambda functions via AWS
 
 ### Database
 * Firebase  (I plan on learning DynamoDB and will switch when I do)
 
 ### Deployment
-* Firebase  (This will also change once I starting using AWS Lambda functions and other AWS microservices)
+* Netlify
 
 ## Phases
 ### First Phase
-* Menu with drop submenu (DONE)
-* Create both a default category page and a page per subcategory (DONE)
-* Sliders where appropriate (DONE)
-* Use data set that can fill in as much of the product information as possible and create categories and subcategories (DONE)
-* Create shopping cart that updates as the quantity fluctuates or deletes (DONE)
-* Create a checkout page with payment field, billing/shipping field and email field. (DONE)
-* Create form validation for the email, billing and shipping. (DONE)
+*Completed*
+* Menu with drop submenu
+* Create both a default category page and a page per subcategory
+* Sliders where appropriate
+* Use data set that can fill in as much of the product information as possible and create categories and subcategories
+* Create shopping cart that updates as the quantity fluctuates or deletes
+* Create a checkout page with payment field, billing/shipping field and email field.
 
 ### Second Phase
-* Create validation for payment field.
-* Learn redux and make the 'cart' (nav) more informative with qty and total price
-* Allow a user to process an order by validating inputs and create an order page summarizing the data. (In progress)
-* Allow a user to search for any product and make the search have autocomplete functionality (In progress)
-* Investigate and setup the payment processing aspect of an e-commerce site using AWS Lambda functions.
+*Currently In Progress*
+* Create form validation for the email, billing and shipping.
+* Research and setup the servless architecture component with AWS Gateway and AWS Lambda or in the alternative Netlify Lambda integration.
+* Learn Redux and make the nav cart display more informative with qty and total price
+* Add Authentication using AWS Cognito and AWS Amplify
 
+### Third Phase
+*Planned To Do*
+* Allow a user to search for any product and make the search have autocomplete functionality
+* Research and setup the ability to test the payment processing aspect of an e-commerce site
+* Allow a user to process an order by validating inputs and create an order page summarizing the data.
 
