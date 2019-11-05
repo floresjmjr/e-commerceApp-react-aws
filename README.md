@@ -35,8 +35,9 @@ The dataset that was used came from http://jmcauley.ucsd.edu/data/amazon/links.h
 * Create a checkout page with payment field, billing/shipping field and email field.
 
 ### Second Phase
-*Currently In Progress*
+*Completed*
 * Create form validation for the email, billing and shipping.
+*Currently In Progress*
 * Research and setup the servless architecture component with AWS Gateway and AWS Lambda or in the alternative Netlify Lambda integration.
 * Learn Redux and make the nav cart display more informative with qty and total price
 * Add Authentication using AWS Cognito and AWS Amplify
