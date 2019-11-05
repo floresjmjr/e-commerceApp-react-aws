@@ -79,6 +79,7 @@ class ProductPage extends Component {
       axios.put(`https://e-commerce-jf.firebaseio.com/cart.json`, jsonData)
       .then((response)=>{
         console.log('posted')
+        alert('The item was added')
       })
     })
   }
