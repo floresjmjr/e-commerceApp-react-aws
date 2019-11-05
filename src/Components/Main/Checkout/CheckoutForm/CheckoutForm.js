@@ -48,7 +48,10 @@ class CheckoutForm extends Component {
   emailSubFormHandler = (event) => {
     event.preventDefault();
     if(this.validateEmail(event)){
-      this.setState({showCustomer: false, showBilling: true})
+      let show = {...this.state.show}
+      show['customer'] = false;
+      show['billing'] = true;
+      this.setState({show: show})
     } else {
       alert('Please provide a valid email');
     }
@@ -61,12 +64,14 @@ class CheckoutForm extends Component {
       email['className'] = '';
       this.setState({email: email})
       event.target.parentElement.classList.remove('InvalidInput')
+      return true;
     } else {
       let email = {...this.state.email}
       email['valid'] = false;
       email['className'] = 'InvalidInput';
       this.setState({email: email})      
       event.target.parentElement.classList.add('InvalidInput')
+      return false;
     }
   }
 
@@ -111,13 +116,19 @@ class CheckoutForm extends Component {
     if(this.state.sameAsBilling) {
       formData = this.state.billingFormData;
     }
+  
+    let customerSection = <p>Returning customer? Login!</p>
+  
+    if(this.state.email.value) {
+      customerSection = <p>{this.state.email.value}</p>;
+    } 
 
     return (
       <section className='CheckoutForm'>
         <section>
           <div className='IdentifyCustomer'>
             <h4 onClick={() => this.toggleFormFields('customer')}>Customer</h4>
-            <p>Returning customer? Login!</p>
+            {customerSection}
           </div>
           {emailSection}
         </section>
