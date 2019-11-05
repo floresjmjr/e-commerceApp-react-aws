@@ -76,8 +76,11 @@ const addressFields = (props) => {
       event.target.parentElement.classList.remove('InvalidInput')
       props.updateFieldClass(props.form, '', name)
     } else {
-      event.target.parentElement.classList.add('InvalidInput')
-      props.updateFieldClass(props.form, 'InvalidInput', name)
+      if(name === 'secondAddress'){
+      } else {
+        event.target.parentElement.classList.add('InvalidInput')
+        props.updateFieldClass(props.form, 'InvalidInput', name)
+      }
     }
   }
 
