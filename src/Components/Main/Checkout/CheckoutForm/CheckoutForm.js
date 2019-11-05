@@ -119,15 +119,15 @@ class CheckoutForm extends Component {
   
     let customerSection = <p>Returning customer? Login!</p>
   
-    if(this.state.email.value) {
+    if(this.state.email.value && this.state.email.valid) {
       customerSection = <p>{this.state.email.value}</p>;
     } 
 
     return (
       <section className='CheckoutForm'>
         <section>
-          <div className='IdentifyCustomer'>
-            <h4 onClick={() => this.toggleFormFields('customer')}>Customer</h4>
+          <div className='IdentifyCustomer' onClick={() => this.toggleFormFields('customer')}>
+            <h4>Customer</h4>
             {customerSection}
           </div>
           {emailSection}
