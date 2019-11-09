@@ -37,6 +37,7 @@ The dataset that was used came from http://jmcauley.ucsd.edu/data/amazon/links.h
 ### Second Phase
 *Completed*
 * Create form validation for the email, billing and shipping.
+
 *Currently In Progress*
 * Research and setup the servless architecture component with AWS Gateway and AWS Lambda or in the alternative Netlify Lambda integration.
 * Learn Redux and make the nav cart display more informative with qty and total price
