@@ -1,12 +1,12 @@
 # E-Commerce App
 
 ## Why
-Was inspired by a tech conference talk about how servless architecture is the future.  I wanted to see how practical it is and how it would go about working.  It forced me to learn React and research serveless technology like AWS Lambda and Netlify's similar service. 
+Was inspired by a tech conference talk about how serverless architecture is the future.  I wanted to see how practical it is and how it would go about working.  It forced me to learn React and research serverless technology like AWS Lambda and Netlify's similar service. 
 
 ## Background
 An e-commerce web page that has an interactive navigation menu, multiple categories and subcategories, slides, shopping cart and checkout forms while partially using an amazon data set that was parsed to add a variety of products.
 
-The dataset that was used came from http://jmcauley.ucsd.edu/data/amazon/links.html.  Made it convient to not have to generate so much fake seed data and have access to hyperlinks that connect to pictures.
+The dataset that was used came from http://jmcauley.ucsd.edu/data/amazon/links.html.  Made it convenient to not have to generate so much fake seed data and have access to hyperlinks that connect to pictures.
 
 ## Technologies Used
 ### Front-End
@@ -39,7 +39,7 @@ The dataset that was used came from http://jmcauley.ucsd.edu/data/amazon/links.h
 * Create form validation for the email, billing and shipping.
 
 *Currently In Progress*
-* Research and setup the servless architecture component with AWS Gateway and AWS Lambda or in the alternative Netlify Lambda integration.
+* Research and setup the serverless architecture component with AWS Gateway and AWS Lambda or in the alternative Netlify Lambda integration.
 * Learn Redux and make the nav cart display more informative with qty and total price
 * Add Authentication using AWS Cognito and AWS Amplify
 
