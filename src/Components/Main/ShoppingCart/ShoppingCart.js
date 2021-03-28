@@ -16,14 +16,11 @@ class ShoppingCart extends Component {
   componentDidMount() {
     axios.get('https://e-commerce-jf.firebaseio.com/cart.json')
     .then((response)=>{
-      console.log('response', response.data)
       const updatedCart = [];
       for(var key in response.data){
         updatedCart.push(response.data[key])
       }
-      console.log('updatedcart', updatedCart);
       const cartItems = this.findNumOfItems(updatedCart);
-      console.log('cartitems', cartItems);
       this.setState({cart: updatedCart, doneLoading: true, totalItems: cartItems})
     })
   }
@@ -77,7 +74,6 @@ class ShoppingCart extends Component {
 
   render() {
 
-
     if(this.state.doneLoading) {
       return (
         <section className='ShoppingCartContainer'>
@@ -91,10 +87,6 @@ class ShoppingCart extends Component {
     }
   }
 }
-
-
-
-
 
 
 export default ShoppingCart;

@@ -35,7 +35,7 @@ const footerLinks = () =>{
           <li>Terms & Conditions</li>
         </ul>
         <div className='Copyright'>
-          <p>&#9400; 2019 Jorge Flores</p>
+          <p>&#9400; 2021 Jorge Flores</p>
         </div>
       </section>
     </div>
