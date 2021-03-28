@@ -1,5 +1,9 @@
 # E-Commerce App
 
+## Deployed
+
+https://sleepy-heyrovsky-3e5b7d.netlify.app/
+
 ## Why
 Was inspired by a tech conference talk about how serverless architecture is the future.  I wanted to see how practical it is and how it would go about working.  It forced me to learn React and research serverless technology like AWS Lambda and Netlify's similar service. 
 
@@ -40,7 +44,7 @@ The dataset that was used came from http://jmcauley.ucsd.edu/data/amazon/links.h
 
 *Currently In Progress*
 * Research and setup the serverless architecture component with AWS Gateway and AWS Lambda or in the alternative Netlify Lambda integration.
-* Learn Redux and make the nav cart display more informative with qty and total price
+* Learn Redux and make the nav cart display more information with qty and total price
 * Add Authentication using AWS Cognito and AWS Amplify
 
 ### Third Phase
