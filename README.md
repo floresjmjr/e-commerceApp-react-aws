@@ -23,7 +23,7 @@ The dataset that was used came from http://jmcauley.ucsd.edu/data/amazon/links.h
 * No backend but working on setting up lambda functions via AWS
 
 ### Database
-* Firebase  (I plan on learning DynamoDB and will switch when I do)
+* Firebase
 
 ### Deployment
 * Netlify

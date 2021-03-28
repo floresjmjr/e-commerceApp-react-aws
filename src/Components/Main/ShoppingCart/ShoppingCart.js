@@ -42,9 +42,7 @@ class ShoppingCart extends Component {
     this.setState({cart: updatedCart, totalItems: cartItems}, ()=>{
       const jsonData = JSON.stringify(this.state.cart)
       axios.put(`https://e-commerce-jf.firebaseio.com/cart.json`, jsonData)
-      .then((response)=>{
-        console.log('posted')
-      })
+      .then((response)=>{})
     })
   }
 
@@ -55,7 +53,6 @@ class ShoppingCart extends Component {
         index = idx
       }
     })
-    console.log('delete', index)
     let updatedCart = this.state.cart.slice()
     updatedCart.splice(index, 1)
     return updatedCart;
