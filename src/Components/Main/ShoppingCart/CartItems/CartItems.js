@@ -8,9 +8,6 @@ const cartItems = (props) =>{
   for(var i= 1; i <= 20; i +=1){
     qtyOptions.push(<option key={i} value={i}>{i}</option>)
   }
-
-  console.log('qtyOptions', qtyOptions);
-
   
   const calculateTotal = (price, qty) => {
     return (price * qty).toFixed(2);
