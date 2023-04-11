@@ -2,7 +2,7 @@
 
 ## Deployed
 
-https://sleepy-heyrovsky-3e5b7d.netlify.app/
+https://jovial-rugelach-3ba527.netlify.app/
 
 ## Why
 Was inspired by a tech conference talk about how serverless architecture is the future.  I wanted to see how practical it is and how it would go about working.  It forced me to learn React and research serverless technology like AWS Lambda and Netlify's similar service. 
