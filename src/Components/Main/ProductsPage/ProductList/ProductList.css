@@ -10,6 +10,7 @@
 .ProductItem {
   border: 1px solid #00263e;
   margin-bottom: 20px;
+  margin-right: 20px;
   padding-top: 5px;
   display: flex;
   flex-direction: column;
@@ -17,6 +18,14 @@
   text-decoration: none;
   box-sizing: border-box;
   width: 300px;
+}
+
+.ProductItem li {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .ProductItem:nth-child(3n) {
@@ -42,7 +51,6 @@
 
 .ProductList {
   display: flex;
-  justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
   width: 90%;
@@ -50,7 +58,9 @@
 }
 
 .ProductImage {
-  max-width: 90%;
+  height: 250px;
+  max-width: 275px;
+  border-radius: 5%;
 }
 
 @media (max-width: 800px) {
